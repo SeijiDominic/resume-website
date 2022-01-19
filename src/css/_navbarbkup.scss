@@ -1,0 +1,163 @@
+@import 'vars';
+@import 'animations';
+
+// Conitaner styles
+.nav-section {
+    @include flex-justify(inherit, inherit);
+    flex-grow: 1;
+}
+
+.nav-buttons {
+    @include flex-justify(inherit, inherit);
+    & > a, & > .nav-button {
+        text-align: left;
+        font-weight: bolder;
+        text-decoration: none;
+        color: inherit;
+        line-height: 50px;
+        vertical-align: middle;
+        padding: 8px;
+
+        &:hover {
+            color: black;
+            font-size: 1.3em;
+            background: $col_accent;
+        }
+    }      
+}
+
+.smart-icon {
+    @include flex-justify(column, center);
+    width: fit-content;
+    cursor: pointer;
+
+    a {
+        padding: 10px 10px;
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &:hover {
+        background: $darker_accent;
+    }
+}
+
+
+
+
+
+.navbar {
+    @include flex-justify(row , flex-start);
+    flex-wrap: nowrap;
+    
+    color: white;
+    flex-grow: 4;
+
+    height: 100%;
+    overflow-x: hidden;
+
+    .contents {
+        @include flex-justify(column , center);
+        background: black;
+        width: 20vw;   
+        
+        
+        transition: margin-right 0.2s ease-in-out;
+    }
+
+    .navbar-toggler {
+        @include flex-justify(column, center);
+        width: 50px;
+        background: $col_accent;
+        overflow: hidden;
+
+        & > .smart-icon > a {
+            padding: 0px;
+        }
+
+        #toggler > * {
+            padding: 0px;
+        }
+
+
+        .tog-section {
+            @include flex-justify(inherit, center);
+            width: inherit;
+            flex-grow: 1;
+        }
+
+        .top {
+            justify-content: flex-start;
+        }
+
+        .bottom {
+            justify-content: flex-end;
+        }
+        
+    }
+
+
+}
+
+@keyframes open-navbar {
+    from {background: red};
+    to {background: blue;}
+}
+
+.navbar-close {
+    .contents {
+        display: none;
+    }
+    .navbar-toggler #toggler > img {
+        transform: rotateY(180deg);
+
+    }
+}
+
+@media screen  and (max-width: 804px) {
+    #navbar {
+        @include flex(column);
+
+        position: sticky;
+        top: 0px;
+
+        .contents {
+            width: 100vw;
+
+            .nav-buttons > a {
+                text-align: center;
+            }
+        }
+
+        .navbar-toggler {
+            @include flex(row);
+            width: 100vw;
+            height: 50px;
+
+            #toggler  {
+                height: 50px;
+                width: 50px;
+            }
+
+            .tog-section {
+                @include flex(inherit);
+                height: inherit;
+                width: 50px;
+                flex-grow: 1;
+
+                .smart-icon {
+                    width: 50px;
+                }
+
+
+            }
+            
+        }
+    }
+    
+}            
+    
+
