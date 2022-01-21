@@ -4,11 +4,11 @@ import { Navbar, NavSection, NavButtons, NavButton, SmartIcon } from './Navbar';
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Link
+  Routes
 } from 'react-router-dom';
 import Content from './Content';
 import { TapNavigator, TapElem } from './TapNavigator';
+import Welcome from './Welcome';
 
 function App() {
 
@@ -44,7 +44,11 @@ function App() {
 
       <div className='right'>
         <Routes>
-          <Route path='/' element={<Content title={'Welcome'}/>}/>        
+          <Route path='/' element={<Welcome animatableHTML={
+            <>
+              <div>Welcome to my page!</div>
+            </>
+          }/>}/>        
           <Route path='/about-me' element={<AboutMe />}/>        
           <Route path='/projects' element={<Projects />}/>        
           <Route path='/credits' element={<Credits />}/>        

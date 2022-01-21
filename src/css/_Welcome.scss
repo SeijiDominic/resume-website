@@ -1,0 +1,104 @@
+@import 'mixins';
+
+$aniHeight: 90px;
+
+@keyframes zaptop {
+    from {
+        display: absolute;
+        background: red;
+        height: 10px;
+    }
+
+    to {
+        background: white;
+        height: 10px;
+    }
+}
+
+.welcome-container {
+    @include flex-justify-align(column, center, center);
+    padding: 0px 50px;
+    flex-grow: 1;
+    background: url(../res/img/blue-tit.jpg) no-repeat;
+    background-attachment: fixed;
+    font-size: 3rem;
+
+    // .welcome-page:before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     background: inherit;
+    //     box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    //     filter: blur(10px);
+        
+    // }
+
+    
+
+    .animated-bg {
+        @include flex(column);
+        background: inherit;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        .top, .bot {
+            flex-grow: 1;
+            background: white;
+        }
+
+        .top {
+            
+            animation-name: zaptop;
+            animation-duration: 4s;
+        }
+        
+        .bot {
+
+        }
+    }
+
+    .welcome-page {
+        background: inherit;
+        @include flex-justify-align(column, center, center);
+        width: 70vw;
+        height: 500px;
+        border-radius: 8px;
+        position: relative;
+
+        .animatable-container {
+            @include flex-justify(column, center);
+            flex-grow: 1;
+
+
+
+            & > div {
+                overflow: hidden;
+                width: 100%;
+                height: $aniHeight;
+
+                .burried-letter {
+                    font-weight: bolder;
+                    margin-top: $aniHeight;
+                    opacity: 0;
+                    display:inline-block;
+                    position: relative;
+                    transition: margin-top 1.3s ease, opacity 3s ease;
+                }
+
+                .emerge {
+                    margin-top: 0px;
+                    opacity: 1;
+                }
+
+            }
+            
+            
+        }
+
+            
+    }
+}
