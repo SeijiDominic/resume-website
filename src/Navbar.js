@@ -7,8 +7,8 @@ const toggleState = {
     default: {
         styles: {
             arrowRotate: '',
-            marginLeft: '',
-            marginTop: ''
+            marginLeft: '0px',
+            marginTop: '0px'
         }
     },
 
@@ -43,7 +43,7 @@ const screenSizes = {
 
 // Containers
 function Navbar(props) {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const forDesktop = useMediaQuery('(min-width: 1025px)');
     const forTablets = useMediaQuery('(max-width: 1025px) and (min-width: 804px)');
     const forPhones = useMediaQuery('(max-width: 804px)');
@@ -81,10 +81,13 @@ function Navbar(props) {
         // setOpen(open);
     }, [ changeStateTo, open ])
 
-    //close navbar on startup if device width is equals to that of a tablet or less.
-    useEffect(() => {
-        openNavbar(!forMobileDevices);
-    }, []);
+    // //close navbar on startup if device width is equals to that of a tablet or less.
+    // useEffect(() => {
+    //     // openNavbar(!forMobileDevices);
+
+    //     // revertConflictingStyles();
+    //     // syncNavbarState();
+    // }, []);
 
     // Side effect for when the screen size change.
     useEffect(() => {

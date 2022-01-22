@@ -1,17 +1,36 @@
 @import 'mixins';
 
-$aniHeight: 90px;
+$aniHeight: fit-content;
 
 @keyframes zaptop {
-    from {
-        display: absolute;
-        background: red;
-        height: 10px;
+    0% {
+        border-top-left-radius: 10px;
+        background: orange;
+        margin-left: 100%;
+        margin-top: 10%;
     }
 
-    to {
-        background: white;
-        height: 10px;
+    50% {
+        border-top-left-radius: 10px;
+        background: orange;
+        margin-left: 0%;
+        margin-top: 10%;
+    }
+}
+
+@keyframes zapbot {
+    0% {
+        border-bottom-right-radius: 10px;
+        background: black;
+        margin-left: -100%;
+        margin-bottom: 10%;
+    }
+
+    50% {
+        border-bottom-right-radius: 10px;
+        background: black;
+        margin-left: 0%;
+        margin-bottom: 10%;
     }
 }
 
@@ -39,25 +58,41 @@ $aniHeight: 90px;
     
 
     .animated-bg {
-        @include flex(column);
         background: inherit;
         position: absolute;
         width: 100%;
         height: 100%;
-
-        .top, .bot {
-            flex-grow: 1;
-            background: white;
-        }
-
-        .top {
-            
-            animation-name: zaptop;
-            animation-duration: 4s;
-        }
         
-        .bot {
+        .relative-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            // position: relative;
+            // overflow: hidden;
+            width: 100%;
+            height: 100%;
 
+            .top, .bot {
+                position: relative;
+                
+
+                width: 100%;
+                height: 50%;
+            }
+
+            .top {
+                background: white;
+                animation-name: zaptop;
+                animation-duration: 2s;
+                
+                
+            }
+            
+            .bot {
+                background: whitesmoke;
+                animation-name: zapbot;
+                animation-duration: 2s;
+            }
         }
     }
 
@@ -65,7 +100,7 @@ $aniHeight: 90px;
         background: inherit;
         @include flex-justify-align(column, center, center);
         width: 70vw;
-        height: 500px;
+        height: 300px;
         border-radius: 8px;
         position: relative;
 
@@ -82,14 +117,15 @@ $aniHeight: 90px;
 
                 .burried-letter {
                     font-weight: bolder;
-                    margin-top: $aniHeight;
                     opacity: 0;
+                    margin-top: 10px;
                     display:inline-block;
                     position: relative;
                     transition: margin-top 1.3s ease, opacity 3s ease;
                 }
 
                 .emerge {
+                    position: sticky;
                     margin-top: 0px;
                     opacity: 1;
                 }

@@ -46,7 +46,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Welcome animatableHTML={
             <>
-              <div>Welcome to my page!</div>
+              <div>Welcome</div>
             </>
           }/>}/>        
           <Route path='/about-me' element={<AboutMe />}/>        

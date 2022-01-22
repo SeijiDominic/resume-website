@@ -110,26 +110,62 @@ button {
 }
 
 @-webkit-keyframes zaptop {
-  from {
-    display: absolute;
-    background: red;
-    height: 10px;
+  0% {
+    border-top-left-radius: 10px;
+    background: orange;
+    margin-left: 100%;
+    margin-top: 10%;
   }
-  to {
-    background: white;
-    height: 10px;
+  50% {
+    border-top-left-radius: 10px;
+    background: orange;
+    margin-left: 0%;
+    margin-top: 10%;
   }
 }
 
 @keyframes zaptop {
-  from {
-    display: absolute;
-    background: red;
-    height: 10px;
+  0% {
+    border-top-left-radius: 10px;
+    background: orange;
+    margin-left: 100%;
+    margin-top: 10%;
   }
-  to {
-    background: white;
-    height: 10px;
+  50% {
+    border-top-left-radius: 10px;
+    background: orange;
+    margin-left: 0%;
+    margin-top: 10%;
+  }
+}
+
+@-webkit-keyframes zapbot {
+  0% {
+    border-bottom-right-radius: 10px;
+    background: black;
+    margin-left: -100%;
+    margin-bottom: 10%;
+  }
+  50% {
+    border-bottom-right-radius: 10px;
+    background: black;
+    margin-left: 0%;
+    margin-bottom: 10%;
+  }
+}
+
+@keyframes zapbot {
+  0% {
+    border-bottom-right-radius: 10px;
+    background: black;
+    margin-left: -100%;
+    margin-bottom: 10%;
+  }
+  50% {
+    border-bottom-right-radius: 10px;
+    background: black;
+    margin-left: 0%;
+    margin-bottom: 10%;
   }
 }
 
@@ -157,6 +193,13 @@ button {
 }
 
 .welcome-container .animated-bg {
+  background: inherit;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-container .animated-bg .relative-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,24 +207,31 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: inherit;
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.welcome-container .animated-bg .top, .welcome-container .animated-bg .bot {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  background: white;
+.welcome-container .animated-bg .relative-container .top, .welcome-container .animated-bg .relative-container .bot {
+  position: relative;
+  width: 100%;
+  height: 50%;
 }
 
-.welcome-container .animated-bg .top {
+.welcome-container .animated-bg .relative-container .top {
+  background: white;
   -webkit-animation-name: zaptop;
           animation-name: zaptop;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.welcome-container .animated-bg .relative-container .bot {
+  background: whitesmoke;
+  -webkit-animation-name: zapbot;
+          animation-name: zapbot;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .welcome-container .welcome-page {
@@ -200,7 +250,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 70vw;
-  height: 500px;
+  height: 300px;
   border-radius: 8px;
   position: relative;
 }
@@ -224,13 +274,15 @@ button {
 .welcome-container .welcome-page .animatable-container > div {
   overflow: hidden;
   width: 100%;
-  height: 90px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .welcome-container .welcome-page .animatable-container > div .burried-letter {
   font-weight: bolder;
-  margin-top: 90px;
   opacity: 0;
+  margin-top: 10px;
   display: inline-block;
   position: relative;
   -webkit-transition: margin-top 1.3s ease, opacity 3s ease;
@@ -238,6 +290,8 @@ button {
 }
 
 .welcome-container .welcome-page .animatable-container > div .emerge {
+  position: -webkit-sticky;
+  position: sticky;
   margin-top: 0px;
   opacity: 1;
 }
@@ -300,6 +354,7 @@ button {
   border-radius: 70%;
   -webkit-transition: margin-left 0.15s ease-in-out, border-radius 0.15s ease-in-out, margin-top 0.15s ease-in-out;
   transition: margin-left 0.15s ease-in-out, border-radius 0.15s ease-in-out, margin-top 0.15s ease-in-out;
+  visibility: hidden;
 }
 
 .nav-buttons .nav-button > a,
@@ -373,6 +428,7 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  background: #121212;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: -webkit-fit-content;
@@ -403,6 +459,7 @@ button {
   transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
   background: #121212;
   width: 20vw;
+  margin-left: -20vw;
 }
 
 .navbar .navbar-toggler {
@@ -481,6 +538,8 @@ button {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    height: 25vh;
+    margin-top: -25vh;
   }
   #navbar .contents .nav-buttons {
     display: -webkit-box;
@@ -549,6 +608,8 @@ button {
   #navbar .navbar-toggler #toggler {
     height: 50px;
     width: 50px;
+    -webkit-transform: rotateY(270deg);
+            transform: rotateY(270deg);
   }
   #navbar .navbar-toggler .tog-section {
     display: -webkit-box;
@@ -604,10 +665,10 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   z-index: 2;
   width: 100%;
   height: 100%;

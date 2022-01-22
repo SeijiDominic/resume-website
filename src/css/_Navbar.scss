@@ -1,6 +1,12 @@
 @import "vars";
 @import "animations";
 
+
+// arrowRotateVertical: 180,
+//             arrowRotateHorizontal: 270,
+//             marginLeft: '-20vw',
+//             marginTop: '-25vh'
+
 // Conitaner styles
 .nav-section {
   @include flex-justify(inherit, inherit);
@@ -26,6 +32,7 @@
             margin-left: 20vw;
             border-radius: 70%;
             transition: margin-left 0.15s ease-in-out, border-radius 0.15s ease-in-out, margin-top 0.15s ease-in-out;
+            visibility: hidden;
         }
 
         & > a,
@@ -78,6 +85,7 @@
 
 .navbar {
   @include flex-justify(row, flex-start);
+  background: $col_dark;
   flex-wrap: nowrap;
   width: fit-content;
   color: $font_light;
@@ -91,6 +99,8 @@
     transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
     background: $col_dark;
     width: 20vw;
+
+    margin-left: -20vw;
   }
 
   .navbar-toggler {
@@ -105,7 +115,7 @@
 
     #toggler > img {
       transition: transform 10s ease-in-out;
-
+      // transform: rotateZ(180deg);
       padding: 0px;
     }
 
@@ -137,6 +147,8 @@
         .contents {
             width: 100vw;
             flex-grow: 1;
+            height: 25vh;
+            margin-top: -25vh;
 
 
             .nav-buttons {
@@ -197,6 +209,7 @@
             #toggler {
                 height: 50px;
                 width: 50px;
+                transform: rotateY(270deg);
             }
 
             .tog-section {

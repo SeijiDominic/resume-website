@@ -6,28 +6,15 @@ function Welcome(props) {
 
     //on mount
     useEffect(() => {
-
         initAnimatables();
 
         setTimeout(() => {
             initAnimations();
-        }, 500);
+        }, 1000);
         
     }, []);
 
-    let initAnimations = async () => {
-        const animatables = await anicon.current.getElementsByTagName('div');
-
-        for (let i = 0; i < animatables.length; i++) {
-            let spaz = Array.from(await animatables[i].getElementsByClassName('burried-letter'));
-
-            spaz.forEach(span => {
-                span.classList.add('emerge');
-            })
-        }   
-    }
-
-    let initAnimatables = () => {
+    let initAnimatables = async () => {
         let animatable = (Array.isArray(animatableHTML.props.children)) ? Array.from(animatableHTML.props.children): Array.of(animatableHTML.props.children);
         let innerTexts = [];
         let newConChildren = [];
@@ -57,15 +44,63 @@ function Welcome(props) {
         setAnimatableHTML(React.cloneElement(animatableHTML, {}, newConChildren));
 
         //im gonna return the processed divs for further processing.
-        return newConChildren;
+        return anicon;
     }
+
+    function recursiveTimeout(iterable, length, timeout) {
+        setTimeout(() => {
+            let len = iterable.length;
+            iterable[(len) - length].classList.add('emerge');
+            console.log(iterable[(len) - length]);
+            if (--length > 0) {
+                // console.log(length);
+                recursiveTimeout(iterable, length, timeout);
+            }
+        }, timeout);
+    }
+
+    let initAnimations = async () => {
+        const animatables = await anicon.current.getElementsByTagName('div');
+
+        for (let i = 0; i < animatables.length; i++) {
+            let spaz = Array.from(await animatables[i].getElementsByClassName('burried-letter'));
+
+
+            setTimeout(
+                recursiveTimeout(spaz, spaz.length, 40),
+                2000
+            );
+            
+
+            // for (let i = 0; i < spaz.length; i++) {
+            //     await setTimeout(spaz[i].classList.add('emerge'), 300);
+            // }
+
+            // spaz.forEach(span => {
+            //     span.classList.add('emerge');
+            // });
+
+            // setTimeout(() => {
+            //     spaz.forEach(span => {
+            //         span.classList.add('emerge');
+            //     });
+            // }, 500);
+            
+            
+        }   
+    }
+
+    
 
     return (
         <div className='welcome-container'>
             <div className='welcome-page'>
                 <div className='animated-bg'>
-                    <div className='top'></div>
-                    <div className='bot'></div>
+                    <div className='relative-container'>
+                        <div className='top'></div>
+                        <div className='bot'></div>
+                    </div>
+                    
                 </div>
                 <div ref={anicon} className='animatable-container'>
                     {animatableHTML}
