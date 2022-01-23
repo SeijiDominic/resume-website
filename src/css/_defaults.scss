@@ -40,7 +40,7 @@ body {
     & > .right{
         @include flex(column);
         flex-grow: 1;
-        overflow-y: auto;
+        overflow-y: hidden;
         height: 100vh;
 
         main, header, footer {
@@ -51,6 +51,7 @@ body {
         main {
             @include flex(column);
             flex-grow: 1;
+            overflow: auto;
         }
 
         header {

@@ -45,9 +45,9 @@ const screenSizes = {
 function Navbar(props) {
     const [open, setOpen] = useState(false);
     const forDesktop = useMediaQuery('(min-width: 1025px)');
-    const forTablets = useMediaQuery('(max-width: 1025px) and (min-width: 804px)');
+    // const forTablets = useMediaQuery('(max-width: 1025px) and (min-width: 804px)');
     const forPhones = useMediaQuery('(max-width: 804px)');
-    const forMobileDevices = useMediaQuery('(max-width: 1025px)'); //from phones to tablets.
+    // const forMobileDevices = useMediaQuery('(max-width: 1025px)'); //from phones to tablets.
 
     // margin-left and margin-top get mixed up when changing screen sizes so I thought 
     // I have to remove conflicting styles every time the screen size changes.
@@ -101,11 +101,11 @@ function Navbar(props) {
         setOpen(state.toggled);
     }
 
-    let openNavbar = (isOpen) => {
-        let state = (!isOpen) ? toggleState.closed : toggleState.open;
-        changeStateTo(state);
-        setOpen(isOpen);
-    }
+    // let openNavbar = (isOpen) => {
+    //     let state = (!isOpen) ? toggleState.closed : toggleState.open;
+    //     changeStateTo(state);
+    //     setOpen(isOpen);
+    // }
 
     return (
         <div id='navbar' className='navbar'>
@@ -130,12 +130,8 @@ function Navbar(props) {
                 <div className='tog-section bottom'>
                     {props.TogglerBottom}
                 </div>
-                
             </div>
-            
         </div>
-            
-        
     );
 }
 
@@ -163,6 +159,8 @@ function NavButtons(props) {
     );
 }
 
+
+//I created this before knowing about CSS pseudo elements.
 function NavButton(props) {
     return (
         <div className='nav-button'>

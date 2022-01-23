@@ -8,7 +8,6 @@ function TapElem(props) {
     );
 }
 
-// TODO: scroll-focused: dont forget 
 function TapNavigator(props) {
     const tapNavi = useRef(null);
     const navigatables = useRef(null);

@@ -1,17 +1,21 @@
 import { Navbar, NavSection, NavButtons, NavButton, SmartIcon } from './Navbar';
 
-//L8r Alig8r
+import { 
+  TransitionGroup,
+  CSSTransition
+} from 'react-transition-group';
+
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes, 
+  useLocation
 } from 'react-router-dom';
 import Content from './Content';
 import { TapNavigator, TapElem } from './TapNavigator';
 import Welcome from './Welcome';
 
 function App() {
-
   return (
     <Router>
       <div className='left'>
@@ -42,8 +46,31 @@ function App() {
         </Navbar>
       </div>
 
-      <div className='right'>
-        <Routes>
+      <Routez className='right' />
+        {/* <Routes>
+          <Route path='/' element={<Welcome animatableHTML={
+            <>
+              <div>Welcome</div>
+            </>
+          }/>}/>        
+          <Route path='/about-me' element={<AboutMe />}/>        
+          <Route path='/projects' element={<Projects />}/>        
+          <Route path='/credits' element={<Credits />}/>        
+        </Routes> */}
+    </Router>
+  );
+}
+
+function Routez(props) {
+  let location = useLocation()
+  return (
+    <TransitionGroup className={props.className}>
+      <CSSTransition 
+        key={location.pathname}
+        classNames="fade"
+        timeout={0}
+      >
+        <Routes location={location}>
           <Route path='/' element={<Welcome animatableHTML={
             <>
               <div>Welcome</div>
@@ -53,10 +80,13 @@ function App() {
           <Route path='/projects' element={<Projects />}/>        
           <Route path='/credits' element={<Credits />}/>        
         </Routes>
-      </div>
-    </Router>
+      </CSSTransition>
+    </TransitionGroup>
   );
 }
+
+
+
 function AboutMe() {
   return (
     <Content title={'About Me'}>
