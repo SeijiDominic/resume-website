@@ -25,6 +25,7 @@ body {
 
     ::selection {
         background-color: $col_accent;
+        color: $font_light;
     }
   // overflow: scroll;
 
@@ -40,29 +41,26 @@ body {
     & > .right{
         @include flex(column);
         flex-grow: 1;
-        overflow-y: hidden;
+        overflow-y: auto;
         height: 100vh;
 
-        main, header, footer {
-            width: 55vw;
-            margin: auto;
-        }
+        // main, header, footer {
+        //     width: 55vw;
+        //     margin: auto;
+        // }
 
-        main {
-            @include flex(column);
-            flex-grow: 1;
-            overflow: auto;
-        }
+        // main {
+        //     @include flex(column);
+        //     flex-grow: 1;
+        //     overflow: auto;
+        // }
 
-        header {
-            margin-top: 5%;
-        }
+        // header {
+        //     margin-top: 5%;
+        // }
         
     }
 
-    .right > main {
-        flex-shrink: 0;
-    }
 
 
 }
@@ -86,11 +84,11 @@ button {
     #root {
         @include flex(column);
 
-        .right {
-            header, main, footer {
-                width: 65vw;
-            }
-        }
+        // .right {
+        //     header, main, footer {
+        //         width: 65vw;
+        //     }
+        // }
     }
     
 }    

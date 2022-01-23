@@ -46,29 +46,22 @@ function App() {
         </Navbar>
       </div>
 
-      <Routez className='right' />
-        {/* <Routes>
-          <Route path='/' element={<Welcome animatableHTML={
-            <>
-              <div>Welcome</div>
-            </>
-          }/>}/>        
-          <Route path='/about-me' element={<AboutMe />}/>        
-          <Route path='/projects' element={<Projects />}/>        
-          <Route path='/credits' element={<Credits />}/>        
-        </Routes> */}
+      <AnimatedRoutes className='right' />
+
+      {/* <AnimatedRoutes className='right' /> */}
+        
     </Router>
   );
 }
 
-function Routez(props) {
+function AnimatedRoutes(props) {
   let location = useLocation()
   return (
     <TransitionGroup className={props.className}>
       <CSSTransition 
         key={location.pathname}
         classNames="fade"
-        timeout={0}
+        timeout={300}
       >
         <Routes location={location}>
           <Route path='/' element={<Welcome animatableHTML={
