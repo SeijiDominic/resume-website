@@ -117,7 +117,7 @@ function Navbar(props) {
                 <SmartIcon
                     clickHandler={toggleNavbar}
                     id='toggler' 
-                    src={require('./res/icons/backicon.png')} 
+                    src={require('./res/icons/backicon-white.png')} 
                     alt={'Arrow'}/>
                 <div className='tog-section top'>
                     {props.TogglerTop}
