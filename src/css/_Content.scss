@@ -1,0 +1,27 @@
+@import 'mixins';
+
+.default-content {
+    @include flex-justify-align(column, center, center);    
+    header, main, footer {
+        width: 60vw;
+    }
+
+    header {
+        margin: 5vh 0 0 0;
+    }
+}
+
+@media screen and (max-width: 804px) {
+    .default-content {
+        @include flex-justify-align(column, flex-start, flex-start);
+        header, main, footer {
+            flex-grow: 1;
+            width: auto;
+            padding: 0 8vw;
+        }
+
+        header {
+            margin: 5vh 0 0 0;
+        }
+    }
+}

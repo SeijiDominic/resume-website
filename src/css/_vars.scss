@@ -1,10 +1,15 @@
-$col_dark: #121212;
-$col_light: #F5F5F5;
-$col_accent: orange;
-$darker_accent: orange;
+$col_dark: #000000;
+$col_light: #F3F4ED;
+$col_accent: #536162;
+$darker_accent: #F3F4ED;
 
+// $font_light: black;
+// $font_dark: white;
+
+// $col_dark: #121212;
+// $col_light: #F5F5F5;
 $font_light: white;
-$font_dark: black;
+$font_dark: #424642;
 
 @mixin flex($direction) {
     display: flex;

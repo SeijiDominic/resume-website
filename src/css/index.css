@@ -15,16 +15,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: inherit;
   width: inherit;
-  background: #F5F5F5;
-  color: black;
+  background: #F3F4ED;
+  color: #424642;
 }
 
 body ::-moz-selection {
-  background-color: orange;
+  background-color: #536162;
+  color: white;
 }
 
 body ::selection {
-  background-color: orange;
+  background-color: #536162;
+  color: white;
 }
 
 #root {
@@ -52,36 +54,8 @@ body ::selection {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  overflow-y: hidden;
+  overflow-y: auto;
   height: 100vh;
-}
-
-#root > .right main, #root > .right header, #root > .right footer {
-  width: 55vw;
-  margin: auto;
-}
-
-#root > .right main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  overflow: auto;
-}
-
-#root > .right header {
-  margin-top: 5%;
-}
-
-#root .right > main {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 code {
@@ -104,9 +78,6 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  #root .right header, #root .right main, #root .right footer {
-    width: 65vw;
   }
 }
 
@@ -369,7 +340,7 @@ button {
   -webkit-box-pack: inherit;
       -ms-flex-pack: inherit;
           justify-content: inherit;
-  color: #F5F5F5;
+  color: #F3F4ED;
 }
 
 .nav-buttons .nav-button {
@@ -385,7 +356,7 @@ button {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: orange;
+  background: #536162;
   margin-left: 20vw;
   border-radius: 70%;
   -webkit-transition: margin-left 0.15s ease-in-out, border-radius 0.15s ease-in-out, margin-top 0.15s ease-in-out;
@@ -411,7 +382,7 @@ button {
 }
 
 .nav-buttons .nav-button:hover {
-  color: #121212;
+  color: #000000;
   font-size: 1.3em;
 }
 
@@ -450,7 +421,7 @@ button {
 }
 
 .smart-icon:hover {
-  background: orange;
+  background: #F3F4ED;
 }
 
 .navbar {
@@ -464,7 +435,7 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: #121212;
+  background: #000000;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: -webkit-fit-content;
@@ -493,7 +464,7 @@ button {
           justify-content: center;
   -webkit-transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
   transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
-  background: #121212;
+  background: #000000;
   width: 20vw;
   margin-left: -20vw;
 }
@@ -510,7 +481,7 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   width: 50px;
-  background: orange;
+  background: #536162;
   overflow: hidden;
 }
 
@@ -601,7 +572,7 @@ button {
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: orange;
+    background: #536162;
     margin-left: 0vh;
     margin-top: -20vh;
     border-radius: 0px;
@@ -623,7 +594,7 @@ button {
     transition: color 0.4s ease;
   }
   #navbar .contents .nav-buttons .nav-button:hover {
-    color: #121212;
+    color: #000000;
     font-size: 1.3em;
   }
   #navbar .contents .nav-buttons .nav-button:hover .ani-bg {
@@ -733,6 +704,58 @@ button {
   }
   .tap-navi .overlays > div:hover {
     opacity: 0.1;
+  }
+}
+
+.default-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.default-content header, .default-content main, .default-content footer {
+  width: 60vw;
+}
+
+.default-content header {
+  margin: 5vh 0 0 0;
+}
+
+@media screen and (max-width: 804px) {
+  .default-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .default-content header, .default-content main, .default-content footer {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: auto;
+    padding: 0 8vw;
+  }
+  .default-content header {
+    margin: 5vh 0 0 0;
   }
 }
 /*# sourceMappingURL=index.css.map */

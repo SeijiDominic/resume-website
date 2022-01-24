@@ -2,7 +2,7 @@ import React from 'react';
 
 function Content(props) {
     return (
-        <>
+        <div className='default-content'>
             <header>
                 <h1>{props.title}</h1>
             </header>
@@ -14,7 +14,7 @@ function Content(props) {
             <footer>
                 {props.footer}
             </footer>
-        </>
+        </div>
     );
 }
 
