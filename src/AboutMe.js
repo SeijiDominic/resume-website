@@ -4,13 +4,13 @@ import { PlayerStats, SkillSet } from './PlayerStats';
 
 const skills = [
   
-  {id: 1, name: "Java", level: 2},
-  {id: 2, name: "JavaScript", level: 3},
-  {id: 3, name: "C#", level: 4},
+  {id: 1, name: "Java", level: 5},
+  {id: 2, name: "JavaScript", level: 4},
+  {id: 3, name: "C#", level: 3},
   {id: 4, name: "HTML5", level: 5},
   {id: 5, name: "CSS3", level: 5},
   {id: 6, name: "SASS", level: 5},
-  {id: 7, name: "ReactJS", level: 3}
+  {id: 7, name: "ReactJS", level: 4}
 ];
 
 

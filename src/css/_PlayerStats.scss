@@ -2,7 +2,7 @@
 @import 'vars';
 
 .skill-cat {
-  background-color: black;
+  background-color: $col_light;
   padding: 12px;
   width: fit-content;
   border-radius: $borderRad;
@@ -21,7 +21,7 @@
     .skill {
       @include flex(row);
       background: rgb(29, 28, 42);
-      color: $col_light;
+      color: $font_light;
       font-size: 1em;
       border-radius: $borderRad;
       margin: 8px 0px;

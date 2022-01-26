@@ -33,13 +33,13 @@ function App() {
           <>
             <SmartIcon 
                 target='_blank' res='noreffer' 
-                src={require('./res/icons/GitHub-Mark/PNG/GitHub-Mark-Light-120px-plus.png')}
+                src={require('./res/icons/GitHub-Mark/PNG/GitHub-Mark-Green-64px.png')}
                 href={'https://github.com/SeijiDominic'}
             />
 
             <SmartIcon 
                 target='_blank' 
-                src={require('./res/icons/LinkedIn-Logos/LI-In-Bug-white.png')}
+                src={require('./res/icons/LinkedIn-Logos/LI-In-Bug-green.png')}
                 href={'https://www.linkedin.com/in/seiji-bautista/'}
             />
           </>

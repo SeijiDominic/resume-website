@@ -1,20 +1,11 @@
-$col_dark: #000000;
-$col_light: #F3F4ED;
-$col_accent: #2a2a2a;
-$darker_accent: #000000;
-
-// $col_dark: #000000;
-// $col_light: #F3F4ED;
-// $col_accent: #536162;
-// $darker_accent: #F3F4ED;
-
+$col_dark: rgb(29, 28, 42);
+$col_light: rgb(11, 10, 27);;
+$col_accent: rgb(29, 28, 42);
+$light_accent: rgb(0, 235, 156);
 $font_light: white;
 $font_dark: black;
-// $font_dark: #424642;
-
 
 $borderRad: 8px;
-
 
 @mixin flex($direction) {
     display: flex;
