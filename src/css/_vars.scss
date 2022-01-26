@@ -12,6 +12,10 @@ $font_light: white;
 $font_dark: black;
 // $font_dark: #424642;
 
+
+$borderRad: 8px;
+
+
 @mixin flex($direction) {
     display: flex;
     flex-direction: $direction;

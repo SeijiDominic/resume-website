@@ -1,4 +1,16 @@
-import { Navbar, NavSection, NavButtons, NavButton, SmartIcon } from './Navbar';
+
+import Welcome from './Welcome';
+import AboutMe from './AboutMe';
+import Projects from './Projects';
+import Credits from './Credits';
+
+import { 
+  Navbar, 
+  NavSection, 
+  NavButtons, 
+  NavButton, 
+  SmartIcon 
+} from './Navbar';
 
 import { 
   TransitionGroup,
@@ -11,9 +23,6 @@ import {
   Routes, 
   useLocation
 } from 'react-router-dom';
-import Content from './Content';
-import { TapNavigator, TapElem } from './TapNavigator';
-import Welcome from './Welcome';
 
 function App() {
   return (
@@ -47,8 +56,6 @@ function App() {
       </div>
 
       <AnimatedRoutes className='right' />
-
-      {/* <AnimatedRoutes className='right' /> */}
         
     </Router>
   );
@@ -80,141 +87,7 @@ function AnimatedRoutes(props) {
 
 
 
-function AboutMe() {
-  return (
-    <Content title={'About Me'}>
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-          venenatis nisl gravida tempor. 
-        </p>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-          venenatis nisl gravida tempor. 
-        </p>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-          venenatis nisl gravida tempor. 
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-          venenatis nisl gravida tempor. 
-        </p>
-    </Content>
-
-    
-  );
-}
-
-function Projects(props) {
-  return(
-    <Content title={'Projects'}>
-      <TapNavigator>
-        <TapElem>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-            Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-            elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-            velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-            venenatis nisl gravida tempor. 
-          </p>
-        </TapElem>
-        <TapElem>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-            Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-            elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-            velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-            venenatis nisl gravida tempor. 
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-            Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-            elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-            velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-            venenatis nisl gravida tempor. 
-          </p>
-        </TapElem>
-        <TapElem>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-            Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-            elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-            velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-            venenatis nisl gravida tempor. 
-          </p>
-        </TapElem>
-        <TapElem>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-            Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-            elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-            velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-            venenatis nisl gravida tempor. 
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-            Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-            elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-            velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-            venenatis nisl gravida tempor. 
-          </p>
-        </TapElem>
-      </TapNavigator>
-    </Content>
-  );
-}
-
-function Credits(props) {
-  return (
-    <Content title={'Credits'}>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-        Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-        elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-        velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-        venenatis nisl gravida tempor. 
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-        Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-        elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-        velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-        venenatis nisl gravida tempor. 
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-        Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-        elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-        velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-        venenatis nisl gravida tempor. 
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-        Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-        elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-        velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-        venenatis nisl gravida tempor. 
-      </p>
-    </Content>
-  );
-}
 
 export default App;
