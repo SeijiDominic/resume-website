@@ -9,23 +9,23 @@ h1, h2, h3, h4, h5 {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Space Mono', monospace;
   font-size: 1.7em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: inherit;
   width: inherit;
-  background: #F3F4ED;
+  background: #0b0a1b;
   color: black;
 }
 
 body ::-moz-selection {
-  background-color: #2a2a2a;
+  background-color: #1d1c2a;
   color: white;
 }
 
 body ::selection {
-  background-color: #2a2a2a;
+  background-color: #1d1c2a;
   color: white;
 }
 
@@ -340,7 +340,7 @@ button {
   -webkit-box-pack: inherit;
       -ms-flex-pack: inherit;
           justify-content: inherit;
-  color: #F3F4ED;
+  color: #00eb9c;
 }
 
 .nav-buttons .nav-button {
@@ -356,7 +356,7 @@ button {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: #2a2a2a;
+  background: #1d1c2a;
   margin-left: 20vw;
   border-radius: 70%;
   -webkit-transition: margin-left 0.15s ease-in-out, border-radius 0.15s ease-in-out, margin-top 0.15s ease-in-out;
@@ -382,7 +382,7 @@ button {
 }
 
 .nav-buttons .nav-button:hover {
-  color: #000000;
+  color: #1d1c2a;
   font-size: 1.3em;
 }
 
@@ -390,7 +390,7 @@ button {
   visibility: visible;
   margin-left: 0px;
   border-radius: 0px;
-  background-color: #F3F4ED;
+  background-color: #00eb9c;
 }
 
 .smart-icon {
@@ -421,10 +421,6 @@ button {
   height: auto;
 }
 
-.smart-icon:hover {
-  background: #000000;
-}
-
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -436,7 +432,7 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: #000000;
+  background: #1d1c2a;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: -webkit-fit-content;
@@ -448,8 +444,6 @@ button {
           flex-grow: 4;
   height: 100%;
   overflow-x: hidden;
-  -webkit-box-shadow: 0px 0px 10px #9c9c9c;
-          box-shadow: 0px 0px 10px #9c9c9c;
 }
 
 .navbar .contents {
@@ -465,7 +459,7 @@ button {
           justify-content: center;
   -webkit-transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
   transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
-  background: #000000;
+  background: #1d1c2a;
   width: 20vw;
   margin-left: -20vw;
 }
@@ -482,8 +476,9 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   width: 50px;
-  background: #2a2a2a;
+  background: #1d1c2a;
   overflow: hidden;
+  border: 2px solid #00eb9c;
 }
 
 .navbar .navbar-toggler > .smart-icon > a {
@@ -573,7 +568,6 @@ button {
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: #2a2a2a;
     margin-left: 0vh;
     margin-top: -20vh;
     border-radius: 0px;
@@ -595,7 +589,6 @@ button {
     transition: color 0.4s ease;
   }
   #navbar .contents .nav-buttons .nav-button:hover {
-    color: #000000;
     font-size: 1.3em;
   }
   #navbar .contents .nav-buttons .nav-button:hover .ani-bg {
@@ -612,6 +605,7 @@ button {
             flex-direction: row;
     width: 100vw;
     height: 50px;
+    border-left: 0px;
   }
   #navbar .navbar-toggler #toggler {
     height: 50px;
@@ -722,6 +716,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: black;
 }
 
 .default-content header, .default-content main, .default-content footer {
@@ -730,6 +725,7 @@ button {
 
 .default-content header {
   margin: 5vh 0 0 0;
+  color: #00eb9c;
 }
 
 @media screen and (max-width: 804px) {
@@ -815,17 +811,17 @@ button {
 }
 
 .bite-size .info-container .info h2 {
-  background: #000000;
+  background: #1d1c2a;
   color: orange;
 }
 
 .bite-size .info-container .info h1 {
   background: orange;
-  color: #F3F4ED;
+  color: #0b0a1b;
 }
 
 .skill-cat {
-  background-color: black;
+  background-color: #0b0a1b;
   padding: 12px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -854,7 +850,7 @@ button {
       -ms-flex-direction: row;
           flex-direction: row;
   background: #1d1c2a;
-  color: #F3F4ED;
+  color: white;
   font-size: 1em;
   border-radius: 8px;
   margin: 8px 0px;

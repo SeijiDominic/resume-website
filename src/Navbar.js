@@ -66,6 +66,7 @@ function Navbar(props) {
         if (forPhones) {
             contents.style.marginTop = state.marginTop;
             toggleArrow.style.transform = `rotateZ(${state.arrowRotateHorizontal}deg)`;
+            
         } else {
             contents.style.marginLeft = state.marginLeft;
             toggleArrow.style.transform = `rotateY(${state.arrowRotateVertical}deg)`;
@@ -117,7 +118,7 @@ function Navbar(props) {
                 <SmartIcon
                     clickHandler={toggleNavbar}
                     id='toggler' 
-                    src={require('./res/icons/backicon-white.png')} 
+                    src={require('./res/icons/backicon-green.png')} 
                     alt={'Arrow'}/>
                 <div className='tog-section top'>
                     {props.TogglerTop}

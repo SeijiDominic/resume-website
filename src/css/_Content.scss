@@ -1,13 +1,16 @@
 @import 'mixins';
+@import 'vars';
 
 .default-content {
-    @include flex-justify-align(column, center, center);    
+    @include flex-justify-align(column, center, center);  
+    color: $font_dark;  
     header, main, footer {
         width: 60vw;
     }
 
     header {
         margin: 5vh 0 0 0;
+        color: $light_accent;
     }
 }
 
