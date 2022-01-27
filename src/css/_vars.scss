@@ -7,6 +7,13 @@ $font_dark: black;
 
 $borderRad: 8px;
 
+// Screen sizes (max-width)
+$phoneQ: (min-width: 320px) and (max-width: 481px);
+$tabletQ: (min-width: 481px) and (max-width: 1025px);
+
+$tabletMax: (max-width: 1025px);
+
+
 @mixin flex($direction) {
     display: flex;
     flex-direction: $direction;

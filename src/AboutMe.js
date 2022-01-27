@@ -19,7 +19,7 @@ const skills = [
 
 function AboutMe(props) {
   let hdrStyles = {
-    background: `no-repeat 60% 30%/180% url(${require('./res/img/burrito-dog.jpg')})`
+    background: `no-repeat 50% 50%/100% url(${require('./res/img/burrito-dog.jpg')})`
   };
 
   // useEffect(() => {
@@ -59,9 +59,6 @@ function AboutMe(props) {
           venenatis nisl gravida tempor. 
         </p>
       </main>
-      <footer>
-        This foot
-      </footer>
     </div>
   );
 

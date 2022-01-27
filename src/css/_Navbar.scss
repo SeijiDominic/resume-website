@@ -106,7 +106,7 @@
     width: 50px;
     background: $col_accent;
     overflow: hidden;
-    border: 2px solid $light_accent;
+    // border: 2px solid $light_accent;
 
     & > .smart-icon > a {
       padding: 0px;
@@ -136,7 +136,7 @@
 }
 
 
-@media screen and (max-width: 804px) {
+@media screen and (max-width: 1025px) and (orientation: portrait) {
     #navbar {
         @include flex(column);
         width: 100vw;
