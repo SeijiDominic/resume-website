@@ -2,7 +2,7 @@ import React from 'react';
 
 function Content(props) {
     let hdrStyles = {
-        background: `no-repeat 50% 42%/100% url(${props.hdrImage})`
+        background: `no-repeat 100% 38%/120% url(${props.hdrImage})`
     };
 
     return (
