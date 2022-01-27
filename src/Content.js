@@ -1,10 +1,14 @@
 import React from 'react';
 
 function Content(props) {
+    let hdrStyles = {
+        background: `no-repeat 50% 42%/100% url(${props.hdrImage})`
+    };
+
     return (
         <div className='sticky-layout about-me'>
             <header className='sticky-child'
-            style={props.hdrStyle}>
+            style={hdrStyles}>
                 <div className='title'>
                     {props.title}
                 </div>
