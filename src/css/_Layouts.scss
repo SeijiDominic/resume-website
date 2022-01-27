@@ -9,8 +9,17 @@
     background: $col_dark;
   }
 
+  header > .title {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: $light_accent;
+    text-shadow: $col_dark 0 0 10px;
+  }
+
 
   main {
+    border-top-left-radius: $borderRad ;
+    border-top-right-radius: $borderRad ;
     z-index: 0;
     padding: 10% 7%;
   }

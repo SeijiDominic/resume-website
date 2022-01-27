@@ -68,7 +68,7 @@ button {
 }
 
 
-@media screen and (max-width: 804px) {
+@media screen and (max-device-width: 1025px) and (orientation: portrait) {
     #root {
         @include flex(column);
 

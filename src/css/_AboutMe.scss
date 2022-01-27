@@ -15,7 +15,6 @@
 
   header {
     @include flex-justify-align(column, center, center);
-    font-size: 3rem;
     height: 30vh;
     background-color: red;
     position: relative;
