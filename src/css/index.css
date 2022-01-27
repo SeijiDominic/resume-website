@@ -15,17 +15,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: inherit;
   width: inherit;
-  background: #F3F4ED;
+  background: white;
   color: black;
 }
 
 body ::-moz-selection {
-  background-color: #2a2a2a;
+  background-color: orange;
   color: white;
 }
 
 body ::selection {
-  background-color: #2a2a2a;
+  background-color: orange;
   color: white;
 }
 
@@ -340,7 +340,7 @@ button {
   -webkit-box-pack: inherit;
       -ms-flex-pack: inherit;
           justify-content: inherit;
-  color: #F3F4ED;
+  color: white;
 }
 
 .nav-buttons .nav-button {
@@ -356,7 +356,7 @@ button {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: #2a2a2a;
+  background: orange;
   margin-left: 20vw;
   border-radius: 70%;
   -webkit-transition: margin-left 0.15s ease-in-out, border-radius 0.15s ease-in-out, margin-top 0.15s ease-in-out;
@@ -382,7 +382,7 @@ button {
 }
 
 .nav-buttons .nav-button:hover {
-  color: #000000;
+  color: #2a2a2a;
   font-size: 1.3em;
 }
 
@@ -390,7 +390,7 @@ button {
   visibility: visible;
   margin-left: 0px;
   border-radius: 0px;
-  background-color: #F3F4ED;
+  background-color: orange;
 }
 
 .smart-icon {
@@ -419,10 +419,12 @@ button {
 .smart-icon a > img {
   width: 100%;
   height: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .smart-icon:hover {
-  background: #000000;
+  background: orange;
 }
 
 .navbar {
@@ -436,7 +438,7 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: #000000;
+  background: #2a2a2a;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: -webkit-fit-content;
@@ -465,7 +467,7 @@ button {
           justify-content: center;
   -webkit-transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
   transition: margin-left 0.5s ease-in-out, margin-top 0.5s ease-in-out;
-  background: #000000;
+  background: #2a2a2a;
   width: 20vw;
   margin-left: -20vw;
 }
@@ -482,7 +484,7 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   width: 50px;
-  background: #2a2a2a;
+  background: orange;
   overflow: hidden;
 }
 
@@ -573,7 +575,7 @@ button {
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: #2a2a2a;
+    background: orange;
     margin-left: 0vh;
     margin-top: -20vh;
     border-radius: 0px;
@@ -595,7 +597,7 @@ button {
     transition: color 0.4s ease;
   }
   #navbar .contents .nav-buttons .nav-button:hover {
-    color: #000000;
+    color: #2a2a2a;
     font-size: 1.3em;
   }
   #navbar .contents .nav-buttons .nav-button:hover .ani-bg {

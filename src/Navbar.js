@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import useMediaQuery from './useMediaQuery';
 import { Link } from 'react-router-dom';
 
@@ -117,7 +117,7 @@ function Navbar(props) {
                 <SmartIcon
                     clickHandler={toggleNavbar}
                     id='toggler' 
-                    src={require('./res/icons/backicon-white.png')} 
+                    src={require('./res/icons/backicon.png')} 
                     alt={'Arrow'}/>
                 <div className='tog-section top'>
                     {props.TogglerTop}

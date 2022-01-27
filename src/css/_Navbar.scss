@@ -57,7 +57,7 @@
                 visibility: visible;
                 margin-left: 0px;
                 border-radius: 0px;
-                background-color: $col_light;
+                background-color: $col_accent;
             }
         }
     }
@@ -76,6 +76,7 @@
     & > img {
       width: 100%;
       height: auto;
+      transition: all 0.5s ease;
     }
   }
 
