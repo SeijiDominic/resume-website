@@ -2,21 +2,15 @@
   position: relative;
 
   // Eeww.
-  & > .sticky-child {
-    min-height: 300px;
+  .sticky-child {
     position: sticky;
     top: 0px;
     z-index: -1;
     background: $col_dark;
   }
 
-  header {
-    min-height: 400px;
-  }
-
 
   main {
-    height: 100vh;
     z-index: 0;
     padding: 10% 7%;
   }

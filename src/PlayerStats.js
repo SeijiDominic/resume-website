@@ -62,12 +62,10 @@ function Gague(props) {
     }
     setPills(temp);
 
-    setPillArray(pills.map(pill => <Pill active={pill} />));
+    setPillArray(pills.map((pill, index) => <Pill key={index} active={pill} />));
   }, [ pills, activePills ]);
 
-  useEffect(() => {
-    console.log(pills.map(pill => <Pill active={pill} />));
-  });
+  
 
   return (
     <div className='pill-case'>

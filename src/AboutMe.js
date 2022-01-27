@@ -1,4 +1,4 @@
-import React, {} from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Content from './Content';
 import { TitledContainer, ReverseC } from './CustContainers';
 import { PlayerStats, SkillSet } from './PlayerStats';
@@ -18,32 +18,63 @@ const skills = [
 
 
 function AboutMe(props) {
-  let tempo = 
-    <Content title={''}>
-      <PlayerStats maxLevel={5}>
-        <SkillSet title={"Skills"} skills={skills}/>
-      </PlayerStats>
-    </Content>;
+  let hdrStyles = {
+    background: `no-repeat 60% 30%/180% url(${require('./res/img/burrito-dog.jpg')})`
+  };
+
+  // useEffect(() => {
+  //   console.log(hdrStyles)
+  // }, [hdrStyles])
+
   return (
-    <div className='sticky-layout'>
-      <header className='sticky-child'>
-        this is header
+    <div className='sticky-layout about-me'>
+      <header className='sticky-child'
+       style={hdrStyles}>
+        <div className='title'>
+          About Me
+        </div>
       </header>
-      <div className='sticky-child'>
+      {/* <div className='sticky-child'>
         <PlayerStats maxLevel={5}>
           <SkillSet title={"Skills"} skills={skills}/>
         </PlayerStats>
-      </div>
+      </div> */}
 
       <main className='main-content'>
-        This main
+        <h1>Education</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
+          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
+          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
+          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
+          venenatis nisl gravida tempor. 
+        </p>
+
+        <h1>Job Experience</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
+          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
+          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
+          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
+          venenatis nisl gravida tempor. 
+        </p>
       </main>
       <footer>
         This foot
       </footer>
     </div>
   );
+
+  // return element;
 }
+
+// function ContentSection(props) {
+//   return (
+//     <>
+//       <h1>{props.title}</h1>
+//     </>
+//   );
+// }
 
 function BiteSize(props) {
   return (
