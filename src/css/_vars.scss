@@ -1,17 +1,18 @@
-$col_dark: #2a2a2a;
-// $col_light: #F3F4ED;
-$col_light: white;
-$col_accent: orange;
-$darker_accent: orange;
-
-// $col_dark: #000000;
-// $col_light: #F3F4ED;
-// $col_accent: #536162;
-// $darker_accent: #F3F4ED;
-
+$col_dark: rgb(11, 10, 27);
+$col_light: rgb(29, 28, 42);
+$col_accent: rgb(29, 28, 42);
+$light_accent: rgb(0, 235, 156);
 $font_light: white;
 $font_dark: black;
-// $font_dark: #424642;
+
+$borderRad: 8px;
+
+// Screen sizes (max-width)
+$phoneQ: (min-width: 320px) and (max-width: 481px);
+$tabletQ: (min-width: 481px) and (max-width: 1025px);
+
+$tabletMax: (max-width: 1025px);
+
 
 @mixin flex($direction) {
     display: flex;

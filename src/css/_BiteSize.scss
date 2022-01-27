@@ -1,0 +1,42 @@
+@import 'vars';
+@import 'mixins';
+
+.bite-size {
+  @include flex-justify(column, center);
+  width: 600px;
+  position: relative;
+
+
+  .avatar {
+    width: inherit;
+    opacity: 1;
+    
+  }
+    
+
+  .info-container {
+    @include flex-justify-align(column, flex-end, flex-end);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .info {
+      @include flex(column);
+
+      & > * {
+        margin: 0px;
+        padding: 8px;
+      }
+
+      h2 {
+        background: $col_dark;
+        color: orange;
+      }
+
+      h1 {
+        background: orange;
+        color: $col_light;
+      }
+    }
+  }
+}

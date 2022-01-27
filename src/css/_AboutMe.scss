@@ -1,0 +1,25 @@
+@import 'vars';
+@import 'mixins';
+
+.about-me {
+  
+  header::before {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $col_dark;
+    opacity: 0;
+    box-shadow: inset $light_accent;
+  }
+
+  header {
+    @include flex-justify-align(column, center, center);
+    height: 30vh;
+    background-color: red;
+    position: relative;
+    // opacity: 0.3;
+
+    
+  }
+}

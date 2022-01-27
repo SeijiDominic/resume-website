@@ -33,20 +33,12 @@ const toggleState = {
     }
 }
 
-// Imma use this for reference.
-const screenSizes = {
-    mob: {min: 320, max: 480},
-    tab: { min: 481, max: 768},
-    lap: { min: 769, max: 1024},
-    des: { min: 1025, max: 1200}
-}
-
 // Containers
 function Navbar(props) {
     const [open, setOpen] = useState(false);
     const forDesktop = useMediaQuery('(min-width: 1025px)');
     // const forTablets = useMediaQuery('(max-width: 1025px) and (min-width: 804px)');
-    const forPhones = useMediaQuery('(max-width: 804px)');
+    const forPhones = useMediaQuery('(max-width: 1025px) and (orientation: portrait)');
     // const forMobileDevices = useMediaQuery('(max-width: 1025px)'); //from phones to tablets.
 
     // margin-left and margin-top get mixed up when changing screen sizes so I thought 
@@ -66,6 +58,7 @@ function Navbar(props) {
         if (forPhones) {
             contents.style.marginTop = state.marginTop;
             toggleArrow.style.transform = `rotateZ(${state.arrowRotateHorizontal}deg)`;
+            
         } else {
             contents.style.marginLeft = state.marginLeft;
             toggleArrow.style.transform = `rotateY(${state.arrowRotateVertical}deg)`;
@@ -79,21 +72,7 @@ function Navbar(props) {
         let state = (!isOpen) ? toggleState.closed : toggleState.open;
         changeStateTo(state);
         // setOpen(open);
-    }, [ changeStateTo, open ])
-
-    // //close navbar on startup if device width is equals to that of a tablet or less.
-    // useEffect(() => {
-    //     // openNavbar(!forMobileDevices);
-
-    //     // revertConflictingStyles();
-    //     // syncNavbarState();
-    // }, []);
-
-    // Side effect for when the screen size change.
-    useEffect(() => {
-        revertConflictingStyles();
-        syncNavbarState();
-    }, [ revertConflictingStyles, syncNavbarState, forDesktop ]);
+    }, [ changeStateTo, open ]);
 
     let toggleNavbar = () => {
         let state = (open) ? toggleState.closed : toggleState.open;
@@ -101,11 +80,10 @@ function Navbar(props) {
         setOpen(state.toggled);
     }
 
-    // let openNavbar = (isOpen) => {
-    //     let state = (!isOpen) ? toggleState.closed : toggleState.open;
-    //     changeStateTo(state);
-    //     setOpen(isOpen);
-    // }
+    useEffect(() => {
+        revertConflictingStyles();
+        syncNavbarState();
+    }, [ revertConflictingStyles, syncNavbarState, forDesktop ]);
 
     return (
         <div id='navbar' className='navbar'>
@@ -117,7 +95,7 @@ function Navbar(props) {
                 <SmartIcon
                     clickHandler={toggleNavbar}
                     id='toggler' 
-                    src={require('./res/icons/backicon.png')} 
+                    src={require('./res/icons/backicon-green.png')} 
                     alt={'Arrow'}/>
                 <div className='tog-section top'>
                     {props.TogglerTop}

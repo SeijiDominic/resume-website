@@ -1,0 +1,32 @@
+.sticky-layout {
+  position: relative;
+
+  // Eeww.
+  .sticky-child {
+    position: sticky;
+    top: 0px;
+    z-index: -1;
+    background: $col_dark;
+  }
+
+  header > .title {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: $light_accent;
+    text-shadow: black 0 0 7px;
+  }
+
+
+  main {
+    border-top-left-radius: $borderRad ;
+    border-top-right-radius: $borderRad ;
+    z-index: 0;
+    padding: 10% 7%;
+  }
+
+  main, footer {
+    background: $col_accent;
+    color: $font_light;
+    padding: 2% 7%;
+  }
+}
