@@ -22,8 +22,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     height: inherit;
     width: inherit;
-    background: $col_light;
-    color: $font_dark;
+    background: $col_dark;
+    color: $font_light;
 
     ::selection {
         background-color: $col_accent;
@@ -42,34 +42,20 @@ body {
 
     & > .right{
         @include flex(column);
+        align-items: center;
         flex-grow: 1;
         overflow-y: auto;
-        height: 100vh;
+        // height: 100vh;
+        position: relative;
 
-        // main, header, footer {
-        //     width: 55vw;
-        //     margin: auto;
-        // }
-
-        // main {
-        //     @include flex(column);
-        //     flex-grow: 1;
-        //     overflow: auto;
-        // }
-
-        // header {
-        //     margin-top: 5%;
-        // }
-        
+        & > * {
+            width: 70vw;
+        }
     }
-
-
-
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 // strip buttons down to skeletons
@@ -86,11 +72,12 @@ button {
     #root {
         @include flex(column);
 
-        // .right {
-        //     header, main, footer {
-        //         width: 65vw;
-        //     }
-        // }
+        & > .right{
+
+            & > * {
+                width: 100%;
+            }
+        }
     }
     
 }    
