@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-
+// Today I finally was able to use context hook and the map function
 let MaxLevel = React.createContext(5);
 
 function PlayerStats(props) {
@@ -21,7 +21,10 @@ function SkillSet(props) {
 
   return (
     <div className='skill-cat'>
-      <h1>{props.category}</h1>
+      <div className='title'>
+        <h1>{props.title}</h1>
+      </div>
+      
       <div className='skill-set'>
         { skillElems }
       </div>
@@ -42,9 +45,8 @@ function Skill(props) {
 
 function Gague(props) {
   let maxPills = useContext(MaxLevel);
-  let [pills, setPills] = useState(new Array(maxPills).fill(false));
+  let [ pills, setPills ] = useState(new Array(maxPills).fill(false));
   let [ activePills, setActivePills ] = useState(props.level);
-
   let [ pillArray, setPillArray ] = useState(null);
 
   useEffect(() => {

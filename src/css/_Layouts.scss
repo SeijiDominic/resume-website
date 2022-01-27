@@ -1,0 +1,29 @@
+.sticky-layout {
+  position: relative;
+
+  // Eeww.
+  & > .sticky-child {
+    min-height: 300px;
+    position: sticky;
+    top: 0px;
+    z-index: -1;
+    background: $col_dark;
+  }
+
+  header {
+    min-height: 400px;
+  }
+
+
+  main {
+    height: 100vh;
+    z-index: 0;
+    padding: 10% 7%;
+  }
+
+  main, footer {
+    background: $col_accent;
+    color: $font_light;
+    padding: 2% 7%;
+  }
+}
