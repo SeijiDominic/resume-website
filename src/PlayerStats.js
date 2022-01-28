@@ -11,31 +11,84 @@ function PlayerStats(props) {
   );
 }
 
+function PlayerStat(props) {
+
+  return (
+    <div className='player-stat'>
+      <div className='stat-name'>
+        <h1>{props.name}</h1>
+      </div>
+
+      <div className={'stat-elems ' + props.className}>
+        {props.children}
+      </div>
+    </div>
+  );
+}
+
+function Institutuion(props) {
+  let [ statusMesg, setStatusMesg ] = useState(null);
+  let [ status, setStatus ] = useState(null);
+
+
+  useEffect(() => {
+    let thisYear = (new Date()).getFullYear();
+    if (props.endYear !== null && props.endYear > thisYear) {
+      setStatusMesg('EXPECTED');
+    }
+
+    if (statusMesg !== null) {
+      setStatus(<span className='status'>{statusMesg}</span>);
+    }
+
+  }, [ props.endYear, statusMesg ]);
+
+  return (
+    <div className='institution neon-container'>
+      <div className='stat-list'>{status}</div>
+      
+      <div className='gen-info'>
+        <h2>{props.name}</h2>
+        <h3>{props.course}</h3>
+      </div>
+      
+
+      <div className='bot-info'>
+        <div>{props.startYear} ~ {props.endYear}</div>
+      </div>
+      
+    </div>
+  );
+}
+
 function SkillSet(props) {
   let [ skills ] = useState(props.skills);
   let [ skillElems, setSkillElems ] = useState(null);
 
   useEffect(() => {
-    setSkillElems(skills.map(skill => <Skill key={skill.id} name={skill.name} level={skill.level} />));
+    setSkillElems(skills.map(skill => 
+      <Skill key={skill.id} name={skill.name} level={skill.level} />
+    ));
   }, [skills]);
 
   return (
-    <div className='skill-cat'>
-      <div className='title'>
-        <h1>{props.title}</h1>
-      </div>
+    // <div className='skill-cat'>
       
-      <div className='skill-set'>
-        { skillElems }
-      </div>
-    </div>
+    //   <div className='skill-set'>
+    //     { skillElems }
+    //   </div>
+    // </div>
+
+    <>
+      {skillElems}
+    </>
     
   );
 }
 
 function Skill(props) {
   return (
-    <div className='skill'>
+    <div className={`skill neon-container ${props.className}`}>
       <div className='skill-name'>{props.name}</div>
       <div className='mid-pad'></div>
       <Gague level={props.level}/>
@@ -74,7 +127,6 @@ function Gague(props) {
   );
 }
 
-
 function Pill(props) {
   let [ isActive ] = useState(props.active);
   let pillActive = (isActive) ? 'active-pill' : '';
@@ -84,4 +136,4 @@ function Pill(props) {
   return elem;
 }
 
-export { PlayerStats, SkillSet };
+export { PlayerStats, SkillSet, Institutuion, PlayerStat };

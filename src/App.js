@@ -1,8 +1,4 @@
-
-import Welcome from './Welcome';
-import AboutMe from './AboutMe';
-import Projects from './Projects';
-import Credits from './Credits';
+import React from 'react';
 
 import { 
   Navbar, 
@@ -23,6 +19,11 @@ import {
   Routes, 
   useLocation
 } from 'react-router-dom';
+
+const Welcome = React.lazy(() => import('./Welcome'));
+const AboutMe = React.lazy(() => import('./AboutMe'));
+const Projects = React.lazy(() => import('./Projects'));
+const Credits = React.lazy(() => import('./Credits'));
 
 function App() {
   return (
@@ -64,24 +65,26 @@ function App() {
 function AnimatedRoutes(props) {
   let location = useLocation()
   return (
-    <TransitionGroup className={props.className}>
-      <CSSTransition 
-        key={location.pathname}
-        classNames="fade"
-        timeout={300}
-      >
-        <Routes location={location}>
-          <Route path='/' element={<Welcome animatableHTML={
-            <>
-              <div>Welcome</div>
-            </>
-          }/>}/>        
-          <Route path='/about-me' element={<AboutMe />}/>        
-          <Route path='/projects' element={<Projects />}/>        
-          <Route path='/credits' element={<Credits />}/>        
-        </Routes>
-      </CSSTransition>
-    </TransitionGroup>
+    <React.Suspense fallback={<div>Loading</div>}>
+      <TransitionGroup className={props.className}>
+        <CSSTransition 
+          key={location.pathname}
+          classNames="fade"
+          timeout={300}
+        >
+          <Routes location={location}>
+            <Route path='/' element={<Welcome animatableHTML={
+              <>
+                <div>Welcome</div>
+              </>
+            }/>}/>        
+            <Route path='/about-me' element={<AboutMe />}/>        
+            <Route path='/projects' element={<Projects />}/>        
+            <Route path='/credits' element={<Credits />}/>        
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+    </React.Suspense>
   );
 }
 
