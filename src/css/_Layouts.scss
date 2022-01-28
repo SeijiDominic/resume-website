@@ -6,13 +6,13 @@
     position: sticky;
     top: 0px;
     z-index: -1;
-    background: $col_dark;
+    background: $darkest;
   }
 
   header > .title {
     font-size: 3rem;
     font-weight: bolder;
-    color: $light_accent;
+    color: $primary_accent;
     text-shadow: black 0 0 7px;
   }
 
@@ -22,11 +22,25 @@
     border-top-right-radius: $borderRad ;
     z-index: 0;
     padding: 10% 7%;
+
+    
+
+    & > section {
+      margin: 50px 0px;
+    }
   }
 
   main, footer {
-    background: $col_accent;
+    background: $darker;
     color: $font_light;
+    
+  }
+
+  footer {
     padding: 2% 7%;
+  }
+
+  &:first-child {
+    margin-top: 0%;
   }
 }

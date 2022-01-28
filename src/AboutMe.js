@@ -1,77 +1,60 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Content from './Content';
 import { TitledContainer, ReverseC } from './CustContainers';
-import { PlayerStats, SkillSet } from './PlayerStats';
+import { PlayerStat, Institutuion, PlayerStats, SkillSet } from './PlayerStats';
 
+// I'd try to make a simple api I can deploy on heroku 
+// once I am content with how the app's overall looks look.
 const skills = [
-  
-  {id: 1, name: "Java", level: 5},
-  {id: 2, name: "JavaScript", level: 4},
-  {id: 3, name: "C#", level: 3},
-  {id: 4, name: "HTML5", level: 5},
-  {id: 5, name: "CSS3", level: 4},
-  {id: 6, name: "SASS", level: 4},
-  {id: 7, name: "ReactJS", level: 4}
+  { id: 1, name: "Java", level: 5} ,
+  { id: 2, name: "JavaScript", level: 4 },
+  { id: 3, name: "C#", level: 2 },
+  { id: 4, name: "HTML5", level: 5 },
+  { id: 5, name: "CSS3", level: 4 },
+  { id: 6, name: "SASS", level: 4 },
+  { id: 7, name: "React", level: 4 },
+  { id: 8, name: "Spring", level: 4 },
+  { id: 9, name: "Git", level: 4 },
+  { id: 10, name: "Windows", level: 4},
+  { id: 11, name: "Linux", level: 3 },
+  { id: 12, name: "NodeJS", level: 2 },
+  { id: 13, name: "SQL", level: 3 }
 ];
-
-
-
 
 function AboutMe(props) {
   let hdrStyles = {
     background: `no-repeat 50% 50%/100% url(${require('./res/img/burrito-dog.jpg')})`
   };
 
-  // useEffect(() => {
-  //   console.log(hdrStyles)
-  // }, [hdrStyles])
-
   return (
-    <div className='sticky-layout about-me'>
-      <header className='sticky-child'
-       style={hdrStyles}>
-        <div className='title'>
-          About Me
-        </div>
-      </header>
-      {/* <div className='sticky-child'>
-        <PlayerStats maxLevel={5}>
-          <SkillSet title={"Skills"} skills={skills}/>
-        </PlayerStats>
-      </div> */}
+    <Content title='About Me' hdrImage={require('./res/img/burrito-dog.jpg')} 
+      content = {
+        <>
+          <section>
+            <PlayerStat name="Education">
+              <Institutuion
+                name='Sheridan College'
+                course='Software Development and Network Engineering'
+                startYear={2020} endYear={2023} />
+            </PlayerStat>
+          </section>
 
-      <main className='main-content'>
-        <h1>Education</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-          venenatis nisl gravida tempor. 
-        </p>
-
-        <h1>Job Experience</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et nulla a ex dictum finibus in ac est. 
-          Etiam sit amet vulputate nunc, non eleifend ipsum. Maecenas luctus feugiat bibendum. Quisque id purus ac 
-          elit congue ullamcorper. Cras eu sapien nulla. Phasellus malesuada mi id odio vehicula elementum. Aliquam 
-          velit urna, efficitur eu consequat et, auctor nec nunc. Suspendisse ut laoreet enim. Quisque sit amet velit 
-          venenatis nisl gravida tempor. 
-        </p>
-      </main>
-    </div>
+          
+          <section>
+            <PlayerStat name='Skills' className={'skill-list'}>
+              <SkillSet 
+                skills={skills}
+                childClass='neon-container' />          
+            </PlayerStat>
+          </section>
+        </>
+        
+      }
+    />
   );
 
-  // return element;
 }
 
-// function ContentSection(props) {
-//   return (
-//     <>
-//       <h1>{props.title}</h1>
-//     </>
-//   );
-// }
 
 function BiteSize(props) {
   return (

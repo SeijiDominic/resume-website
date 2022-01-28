@@ -1,5 +1,4 @@
-@import 'vars';
-@import 'mixins';
+
 
 .about-me {
   
@@ -8,9 +7,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: $col_dark;
+    background: $darkest;
     opacity: 0;
-    box-shadow: inset $light_accent;
+    box-shadow: inset $primary_accent;
   }
 
   header {
@@ -23,3 +22,4 @@
     
   }
 }
+

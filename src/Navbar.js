@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import useMediaQuery from './useMediaQuery';
 import { Link } from 'react-router-dom';
 

@@ -1,20 +1,17 @@
-@import 'mixins';
-@import 'vars';
-
 .skill-cat {
   @include flex(column);
-  background-color: $col_light;
+  background-color: $darker;
   padding: 12px;
   width: fit-content;
   border-radius: $borderRad;
 
   .title {
-    // background: $light_accent;
+    // background: $primary_accent;
     @include flex-justify-align(column, center, center);
     // margin-right: 8px;
-    border: 2px solid $light_accent;
+    border: 2px solid $primary_accent;
     color: $font_light;
-    background-color: $col_accent;
+    background-color: $darker;
     // width: 37px;
     border-radius: 8px;
     & > h1{
@@ -43,12 +40,15 @@
 
     .skill {
       @include flex(row);
-      background: $col_accent;
+      background: $darker;
       color: $font_light;
       font-size: 1em;
       border-radius: $borderRad;
       margin: 8px 0px;
-      box-shadow: inset 0px 0px 2px $light_accent;
+      box-shadow: inset 0px 0px 2px $primary_accent;
+      
+      
+      width: 50%;
 
 
       .skill-name, .pill-case {
@@ -92,4 +92,230 @@
     }
   }
 }
+
+.neon-container {
+  background: $darker;
+  color: $font_light;
+  box-shadow: 0 0 3px $primary_accent;
+  border-radius: $borderRad;
+  
+  & > h1 {
+    color: $primary_accent;
+  }
+}
+
+.skill {
+  @include flex(row);
+  margin: 8px 0px;
+  padding: 10px 0;
+  width:fit-content;
+  // width: 500px;
+
+  .mid-pad {
+    flex-grow: 1;
+  }
+
+  .skill-name {
+    padding: 0 10px 0 20px;
+    width: 250px;
+    min-width: 0;
+    font-size: 100%;
+
+  }
+
+  .pill-case {
+    @include flex-justify-align(row, flex-end, center);
+    flex-grow: 1;
+    padding: 0 20px;
+    max-width: fit-content;
+    
+    & > .dead-pill {
+      background: grey;
+      width: 18px;
+      height: 18px;
+      margin: 10px 4px;
+      border-radius: 18px;
+    }
+
+    & > .active-pill {
+      background: rgb(0, 235, 156);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.institution {
+  position: relative;
+  padding: 20px 40px;
+  width: fit-content;
+
+  .stat-list {
+    @include flex-justify(row, flex-end);
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+
+    & > .status {
+      background: $primary_accent;
+      font-size: 1rem;
+      padding: 0 5px;
+      border-radius: 3px;
+      color: black;
+    }    
+  }
+
+  .gen-info {
+    & > h2 {
+      color: $primary_accent;
+      width: 60%;
+      margin: 0;
+    }
+
+    & > h3 {
+      // background: orange;
+      width: 80%;
+      margin: 7px 0;
+      font-weight: lighter;
+      font-size: 1rem;
+    }
+  }
+
+  & > h2 {
+    // background: orange;
+    width: 60%;
+    margin: 0;
+  }
+
+  & > h3 {
+    // background: orange;
+    width: 80%;
+    margin: 7px 0;
+    font-weight: lighter;
+    font-size: 1rem;
+  }
+
+  .bot-info {
+    @include flex-justify(row, flex-end);
+
+  }  
+}
+
+.player-stat {
+  border-radius: $borderRad;
+  max-width: 1025px;
+  margin: auto;
+
+  & > * {
+    background-color: inherit;
+    border-radius: inherit;
+  }
+
+  .stat-name {
+    @include flex-justify(row, center);
+
+    & > h1 {
+      position: sticky;
+      top: 0px;
+      width: 100%;
+      text-align: center;
+      margin: 0px;
+      background-color: $darker;
+      padding: 5px 20px;
+      // border-bottom-right-radius: $borderRad;
+      // border-bottom-left-radius: $borderRad;
+    }
+  }
+
+  .stat-elems {
+    @include flex-justify-align(column, center, center);
+    background-color: $darker;
+    // background-color: $darkest;
+    // padding: 20px;
+    position: relative;
+  }
+
+  .skill-list {
+    @include flex-justify-align(row, center, flex-start);
+    height: fit-content;
+    flex-wrap: wrap;
+    
+    .skill {
+      flex-shrink: 1;
+      // width: 45%;
+      margin: 10px;
+      // border-radius: 0px;
+
+    }
+  }
+
+}
+
+@media screen and (max-width: 1025px) and (orientation: portrait) {
+  .skill {
+    min-width: 0;
+    flex-shrink: 2;
+
+    .mid-pad {
+      flex-grow: 1;
+    }
+
+    .skill-name {
+      padding: 0 10px 0 20px;
+      width: 250px;
+    }
+
+
+    // .pill-case {
+    //   @include flex-justify-align(row, flex-end, center);
+    //   flex-grow: 1;
+    //   padding: 0 20px;
+    //   max-width: fit-content;
+      
+    //   & > .dead-pill {
+    //     background: grey;
+    //     width: 18px;
+    //     height: 18px;
+    //     margin: 10px 4px;
+    //     border-radius: 18px;
+    //   }
+
+    //   & > .active-pill {
+    //     background: rgb(0, 235, 156);
+    //   }
+    // }
+
+    // &:last-child {
+    //   margin-bottom: 0px;
+    // }
+  }
+
+  .player-stat {
+
+    .stat-name {
+
+      & > h1 {
+      }
+    }
+
+    .stat-elems {
+
+      .skill-list {
+        
+        .skill {
+          min-width: none;
+          width: 80%;
+
+        }
+      }
+    }
+
+  }
+
+}
+
+
 

@@ -76,7 +76,7 @@ button {
   outline: none;
 }
 
-@media screen and (max-device-width: 1025px) and (orientation: portrait) {
+@media screen and (max-width: 1025px) and (orientation: portrait) {
   #root {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -117,10 +117,21 @@ button {
   padding: 10% 7%;
 }
 
+.sticky-layout main > section {
+  margin: 50px 0px;
+}
+
 .sticky-layout main, .sticky-layout footer {
   background: #1d1c2a;
   color: white;
+}
+
+.sticky-layout footer {
   padding: 2% 7%;
+}
+
+.sticky-layout:first-child {
+  margin-top: 0%;
 }
 
 .plain-cont {
@@ -580,6 +591,8 @@ button {
 .smart-icon a > img {
   width: 100%;
   height: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .navbar {
@@ -1050,6 +1063,7 @@ button {
   margin: 8px 0px;
   -webkit-box-shadow: inset 0px 0px 2px #00eb9c;
           box-shadow: inset 0px 0px 2px #00eb9c;
+  width: 50%;
 }
 
 .skill-cat .skill-set .skill .skill-name, .skill-cat .skill-set .skill .pill-case {
@@ -1105,5 +1119,256 @@ button {
 
 .skill-cat .skill-set .skill:last-child {
   margin-bottom: 0px;
+}
+
+.neon-container {
+  background: #1d1c2a;
+  color: white;
+  -webkit-box-shadow: 0 0 3px #00eb9c;
+          box-shadow: 0 0 3px #00eb9c;
+  border-radius: 8px;
+}
+
+.neon-container > h1 {
+  color: #00eb9c;
+}
+
+.skill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 8px 0px;
+  padding: 10px 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.skill .mid-pad {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.skill .skill-name {
+  padding: 0 10px 0 20px;
+  width: 250px;
+  min-width: 0;
+  font-size: 100%;
+}
+
+.skill .pill-case {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0 20px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.skill .pill-case > .dead-pill {
+  background: grey;
+  width: 18px;
+  height: 18px;
+  margin: 10px 4px;
+  border-radius: 18px;
+}
+
+.skill .pill-case > .active-pill {
+  background: #00eb9c;
+}
+
+.skill:last-child {
+  margin-bottom: 0px;
+}
+
+.institution {
+  position: relative;
+  padding: 20px 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.institution .stat-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+}
+
+.institution .stat-list > .status {
+  background: #00eb9c;
+  font-size: 1rem;
+  padding: 0 5px;
+  border-radius: 3px;
+  color: black;
+}
+
+.institution .gen-info > h2 {
+  color: #00eb9c;
+  width: 60%;
+  margin: 0;
+}
+
+.institution .gen-info > h3 {
+  width: 80%;
+  margin: 7px 0;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.institution > h2 {
+  width: 60%;
+  margin: 0;
+}
+
+.institution > h3 {
+  width: 80%;
+  margin: 7px 0;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.institution .bot-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.player-stat {
+  border-radius: 8px;
+  max-width: 1025px;
+  margin: auto;
+}
+
+.player-stat > * {
+  background-color: inherit;
+  border-radius: inherit;
+}
+
+.player-stat .stat-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.player-stat .stat-name > h1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  background-color: #1d1c2a;
+  padding: 5px 20px;
+}
+
+.player-stat .stat-elems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1d1c2a;
+  position: relative;
+}
+
+.player-stat .skill-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.player-stat .skill-list .skill {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  margin: 10px;
+}
+
+@media screen and (max-width: 1025px) and (orientation: portrait) {
+  .skill {
+    min-width: 0;
+    -ms-flex-negative: 2;
+        flex-shrink: 2;
+  }
+  .skill .mid-pad {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .skill .skill-name {
+    padding: 0 10px 0 20px;
+    width: 250px;
+  }
+  .player-stat .stat-elems .skill-list .skill {
+    min-width: none;
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=index.css.map */

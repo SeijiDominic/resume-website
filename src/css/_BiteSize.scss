@@ -1,5 +1,4 @@
-@import 'vars';
-@import 'mixins';
+
 
 .bite-size {
   @include flex-justify(column, center);
@@ -29,13 +28,13 @@
       }
 
       h2 {
-        background: $col_dark;
+        background: $darkest;
         color: orange;
       }
 
       h1 {
         background: orange;
-        color: $col_light;
+        color: $darker;
       }
     }
   }

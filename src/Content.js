@@ -15,7 +15,7 @@ function Content(props) {
             </header>
 
             <main className='main-content'>
-                {props.children}
+                {props.content}
             </main>
             <footer>
                 {props.footer}

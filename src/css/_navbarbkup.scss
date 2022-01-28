@@ -21,7 +21,7 @@
         &:hover {
             color: black;
             font-size: 1.3em;
-            background: $col_accent;
+            background: $darker;
         }
     }      
 }
@@ -71,7 +71,7 @@
     .navbar-toggler {
         @include flex-justify(column, center);
         width: 50px;
-        background: $col_accent;
+        background: $darker;
         overflow: hidden;
 
         & > .smart-icon > a {
