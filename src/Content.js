@@ -15,7 +15,7 @@ function Content(props) {
     return () => {
       newImg.onload = null;
     }
-  });
+  }, [bgImg, props.hdrImage]);
 
   let element =
     <div className='sticky-layout about-me'>
