@@ -1,23 +1,17 @@
 .skill-cat {
   @include flex(column);
-  background-color: $darker;
   padding: 12px;
   width: fit-content;
   border-radius: $borderRad;
 
   .title {
-    // background: $primary_accent;
     @include flex-justify-align(column, center, center);
-    // margin-right: 8px;
     border: 2px solid $primary_accent;
     color: $font_light;
-    background-color: $darker;
-    // width: 37px;
     border-radius: 8px;
     & > h1{
       font-size: 1.6rem;
       margin: 0px;
-      // transform: rotateZ(-90deg);
     }
     
     // border-top-left-radius: inherit;
@@ -98,6 +92,9 @@
   color: $font_light;
   box-shadow: 0 0 3px $primary_accent;
   border-radius: $borderRad;
+  max-width: 1025px;
+  // animation: fadeIn 2s;
+
   
   & > h1 {
     color: $primary_accent;
@@ -127,7 +124,6 @@
     @include flex-justify-align(row, flex-end, center);
     flex-grow: 1;
     padding: 0 20px;
-    max-width: fit-content;
     
     & > .dead-pill {
       background: grey;
@@ -149,8 +145,6 @@
 
 .institution {
   position: relative;
-  padding: 20px 40px;
-  width: fit-content;
 
   .stat-list {
     @include flex-justify(row, flex-end);
@@ -169,6 +163,8 @@
   }
 
   .gen-info {
+    margin: 20px;
+
     & > h2 {
       color: $primary_accent;
       width: 60%;
@@ -185,13 +181,11 @@
   }
 
   & > h2 {
-    // background: orange;
     width: 60%;
     margin: 0;
   }
 
   & > h3 {
-    // background: orange;
     width: 80%;
     margin: 7px 0;
     font-weight: lighter;
@@ -200,7 +194,7 @@
 
   .bot-info {
     @include flex-justify(row, flex-end);
-
+    margin: 20px;
   }  
 }
 
@@ -210,7 +204,6 @@
   margin: auto;
 
   & > * {
-    background-color: inherit;
     border-radius: inherit;
   }
 
@@ -223,7 +216,7 @@
       width: 100%;
       text-align: center;
       margin: 0px;
-      background-color: $darker;
+      // background-color: $darker;
       padding: 5px 20px;
       // border-bottom-right-radius: $borderRad;
       // border-bottom-left-radius: $borderRad;
@@ -232,9 +225,6 @@
 
   .stat-elems {
     @include flex-justify-align(column, center, center);
-    background-color: $darker;
-    // background-color: $darkest;
-    // padding: 20px;
     position: relative;
   }
 
@@ -245,13 +235,30 @@
     
     .skill {
       flex-shrink: 1;
-      // width: 45%;
       margin: 10px;
-      // border-radius: 0px;
+      flex-grow: 1;
 
     }
   }
 
+}
+
+.titled-list {
+  max-width: 1025px;
+  .title {
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .item-list {
+    @include flex-justify-align(row, center, flex-start);
+    flex-wrap: wrap;
+
+    & > * {
+      flex-grow: 1;
+      margin: 10px;
+    }
+  }
 }
 
 @media screen and (max-width: 1025px) and (orientation: portrait) {
@@ -268,29 +275,6 @@
       width: 250px;
     }
 
-
-    // .pill-case {
-    //   @include flex-justify-align(row, flex-end, center);
-    //   flex-grow: 1;
-    //   padding: 0 20px;
-    //   max-width: fit-content;
-      
-    //   & > .dead-pill {
-    //     background: grey;
-    //     width: 18px;
-    //     height: 18px;
-    //     margin: 10px 4px;
-    //     border-radius: 18px;
-    //   }
-
-    //   & > .active-pill {
-    //     background: rgb(0, 235, 156);
-    //   }
-    // }
-
-    // &:last-child {
-    //   margin-bottom: 0px;
-    // }
   }
 
   .player-stat {

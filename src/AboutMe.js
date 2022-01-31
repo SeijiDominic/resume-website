@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Content from './Content';
-import { TitledContainer, ReverseC } from './CustContainers';
-import { PlayerStat, Institutuion, PlayerStats, SkillSet } from './PlayerStats';
+import { PlayerStat, Institutuion, SkillSet, TitledList } from './PlayerStats';
 
 // I'd try to make a simple api I can deploy on heroku 
 // once I am content with how the app's overall looks look.
@@ -22,44 +21,56 @@ const skills = [
 ];
 
 function AboutMe(props) {
-  let hdrStyles = {
-    background: `no-repeat 50% 50%/100% url(${require('./res/img/burrito-dog.jpg')})`
-  };
-
   return (
     <Content title='About Me' hdrImage={require('./res/img/burrito-dog.jpg')} 
       content = {
         <>
-          <section>
-            <PlayerStat name="Education">
+          <BiteSize 
+              src={require('./res/img/me-face.jpg')}
+              userName='Seiji Akakabe'
+              userTitle='Magic Apprentice'
+              />
+
+          <TitledList 
+            title='Education'
+            listItems={
               <Institutuion
                 name='Sheridan College'
                 course='Software Development and Network Engineering'
                 startYear={2020} endYear={2023} />
-            </PlayerStat>
-          </section>
+            }
+            />
 
-          
-          <section>
-            <PlayerStat name='Skills' className={'skill-list'}>
-              <SkillSet 
-                skills={skills}
-                childClass='neon-container' />          
-            </PlayerStat>
-          </section>
+          <TitledList 
+            title='Skills'
+            listItems= {
+            <SkillSet 
+              skills={skills}
+              childClass='neon-container' /> }
+          />
         </>
         
       }
     />
   );
-
 }
 
-
 function BiteSize(props) {
+  const [avatarImage, setAvatarImage] = useState(null);
+
+  useEffect(() => {
+    let img = new Image();
+    img.onload = () => setAvatarImage(props.src);
+    img.src = props.src;
+
+    return () => {
+      img.onload = null;
+    }
+  });
+
   return (
-    <div className='bite-size' >
-      <img className='avatar' src={props.src} alt='User Avatar' />
+    <div className='bite-size neon-container' >
+      <img className='avatar' src={avatarImage} alt='User Avatar' />
       <div className='info-container'>
         <div className='info'>
           <h1>{props.userName}</h1>

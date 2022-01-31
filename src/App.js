@@ -23,7 +23,7 @@ import {
 const Welcome = React.lazy(() => import('./Welcome'));
 const AboutMe = React.lazy(() => import('./AboutMe'));
 const Projects = React.lazy(() => import('./Projects'));
-const Credits = React.lazy(() => import('./Credits'));
+const Contact = React.lazy(() => import('./Contact'));
 
 function App() {
   return (
@@ -50,7 +50,7 @@ function App() {
               <NavButtons>
                   <NavButton to='/about-me'>About me</NavButton>
                   <NavButton to='/projects'>Projects</NavButton>
-                  <NavButton to='/credits'>Credits</NavButton>
+              <NavButton to='/contact'>Contact</NavButton>
               </NavButtons>
           </NavSection>
         </Navbar>
@@ -80,7 +80,7 @@ function AnimatedRoutes(props) {
             }/>}/>        
             <Route path='/about-me' element={<AboutMe />}/>        
             <Route path='/projects' element={<Projects />}/>        
-            <Route path='/credits' element={<Credits />}/>        
+            <Route path='/contact' element={<Contact />}/>        
           </Routes>
         </CSSTransition>
       </TransitionGroup>

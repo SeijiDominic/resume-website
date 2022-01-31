@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+// Id probably delete this tbh.
 function Welcome(props) {
     const anicon = useRef(null);
     const [animatableHTML, setAnimatableHTML] = useState(props.animatableHTML);
