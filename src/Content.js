@@ -35,7 +35,10 @@ function Content(props) {
     </div>;
 
   return (
-    element
+    <>
+      {bgImg && element}
+    </>
+    
   );
 }
 
