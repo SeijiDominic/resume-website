@@ -3,14 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 // Today I finally was able to use context hook and the map function
 let MaxLevel = React.createContext(5);
 
-function PlayerStats(props) {
-  return (
-    <MaxLevel.Provider value={props.maxLevel}>
-      {props.children}
-    </MaxLevel.Provider>
-  );
-}
-
 function PlayerStat(props) {
 
   return (
@@ -26,6 +18,25 @@ function PlayerStat(props) {
   );
 }
 
+// pass in an array of jsx elements to list.
+function TitledList(props) {
+
+  return(
+    <div className='titled-list'>
+      <h1 className='title'>{props.title}</h1>
+      <div className='item-list'>
+        {props.listItems}
+      </div>
+    </div>
+  );
+}
+
+// function Education(props) {
+
+//   return
+// }
+
+// Misspelled...
 function Institutuion(props) {
   let [ statusMesg, setStatusMesg ] = useState(null);
   let [ status, setStatus ] = useState(null);
@@ -72,13 +83,6 @@ function SkillSet(props) {
   }, [skills]);
 
   return (
-    // <div className='skill-cat'>
-      
-    //   <div className='skill-set'>
-    //     { skillElems }
-    //   </div>
-    // </div>
-
     <>
       {skillElems}
     </>
@@ -88,7 +92,7 @@ function SkillSet(props) {
 
 function Skill(props) {
   return (
-    <div className={`skill neon-container ${props.className}`}>
+    <div className={`skill neon-container`}>
       <div className='skill-name'>{props.name}</div>
       <div className='mid-pad'></div>
       <Gague level={props.level}/>
@@ -118,8 +122,6 @@ function Gague(props) {
     setPillArray(pills.map((pill, index) => <Pill key={index} active={pill} />));
   }, [ pills, activePills ]);
 
-  
-
   return (
     <div className='pill-case'>
       { pillArray }
@@ -136,4 +138,4 @@ function Pill(props) {
   return elem;
 }
 
-export { PlayerStats, SkillSet, Institutuion, PlayerStat };
+export { SkillSet, Institutuion, PlayerStat, TitledList };

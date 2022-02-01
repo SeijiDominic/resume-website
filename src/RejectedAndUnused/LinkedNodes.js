@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { toComponentArray } from './Utils';
+import { toComponentArray } from '../Utils';
 
 function LinkedNodes(props) {
   let [ elements, setElements ] = useState(null);

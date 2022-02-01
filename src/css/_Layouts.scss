@@ -18,22 +18,27 @@
 
 
   main {
+    @include flex-justify-align(column, center, center);
     border-top-left-radius: $borderRad ;
     border-top-right-radius: $borderRad ;
     z-index: 0;
     padding: 10% 7%;
+    min-height: 100vh;
 
     
 
-    & > section {
-      margin: 50px 0px;
+    & > * {
+      width: 100%;
+      margin: 20px;
+
     }
   }
 
+  
+
   main, footer {
-    background: $darker;
+    background: $dark;
     color: $font_light;
-    
   }
 
   footer {

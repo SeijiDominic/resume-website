@@ -23,10 +23,9 @@ body {
     color: $font_light;
 
     ::selection {
-        background-color: $darker;
-        color: $font_light;
+        background-color: $primary_accent;
+        color: $font_dark;
     }
-  // overflow: scroll;
 
 }
 
@@ -78,4 +77,9 @@ button {
     }
     
 }    
+
+
+
+
+
 
