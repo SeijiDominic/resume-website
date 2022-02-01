@@ -66,24 +66,18 @@ function AnimatedRoutes(props) {
   let location = useLocation()
   return (
     <React.Suspense fallback={<div>Loading</div>}>
-      <TransitionGroup className={props.className}>
-        <CSSTransition 
-          key={location.pathname}
-          classNames="fade"
-          timeout={300}
-        >
-          <Routes location={location}>
-            <Route path='/' element={<Welcome animatableHTML={
-              <>
-                <div>Welcome</div>
-              </>
-            }/>}/>        
-            <Route path='/about-me' element={<AboutMe />}/>        
-            <Route path='/projects' element={<Projects />}/>        
-            <Route path='/contact' element={<Contact />}/>        
-          </Routes>
-        </CSSTransition>
-      </TransitionGroup>
+      <div className={props.className}>
+        <Routes location={location}>
+          <Route path='/' element={<Welcome animatableHTML={
+            <>
+              <div>Welcome</div>
+            </>
+          }/>}/>        
+          <Route path='/about-me' element={<AboutMe />}/>        
+          <Route path='/projects' element={<Projects />}/>        
+          <Route path='/contact' element={<Contact />}/>        
+        </Routes>
+      </div>
     </React.Suspense>
   );
 }
