@@ -1,11 +1,19 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 function Content(props) {
   const [bgImg, setBgImg] = useState(null);
+  const showOnScroll = useRef(); 
   let hdrStyles = {
     background: `no-repeat 100% 38%/120% url(${bgImg})`
   };
+
+  useEffect(() => {
+    //get show on scroll elements
+    let elems = showOnScroll.current;
+    console.log(elems);
+    
+  }, [showOnScroll]);
 
   useEffect(() => {
     let newImg = new Image();
@@ -26,7 +34,7 @@ function Content(props) {
         </div>
       </header>
 
-      <main className='main-content'>
+      <main ref={showOnScroll} className='main-content'>
         {props.content}
       </main>
       <footer>
@@ -36,7 +44,7 @@ function Content(props) {
 
   return (
     <>
-      {bgImg && element}
+      {element}
     </>
     
   );

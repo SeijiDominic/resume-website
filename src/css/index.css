@@ -199,6 +199,16 @@ button {
   position: relative;
 }
 
+.scroll-animatables > * {
+  margin: 50px;
+  -webkit-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 @-webkit-keyframes zaptop {
   0% {
     border-top-left-radius: 10px;

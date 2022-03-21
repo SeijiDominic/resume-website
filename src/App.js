@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {  useEffect } from 'react';
 
 import { 
   Navbar, 
@@ -24,6 +24,11 @@ const Welcome = React.lazy(() => import('./Welcome'));
 const AboutMe = React.lazy(() => import('./AboutMe'));
 const Projects = React.lazy(() => import('./Projects'));
 const Contact = React.lazy(() => import('./Contact'));
+
+//find everything from the content root the elements that has the attribute of ____ and add behaviour to those elements
+// useEffect(() => {
+//   document.querySelector()
+// }, []);
 
 function App() {
   return (
