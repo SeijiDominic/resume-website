@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Loading from './Loading';
 // import Content from './Content';
 // import { Institutuion, PlayerStat } from './PlayerStats';
 
@@ -31,6 +30,78 @@ function Contact(props) {
 
   return (
     <>
+      <div ref={fadeElemsContainer} className='scroll-animatables'>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+        <div>Hello there</div>
+      </div>
     </>
   );
 }
