@@ -22,11 +22,11 @@ const skills = [
 
 function AboutMe(props) {
   return (
-    <Content title='About Me' hdrImage={require('./res/img/burrito-dog.jpg')} 
+    <Content title='About Me' hdrImage={require('../res/img/burrito-dog.jpg')} 
       content = {
         <>
           <BiteSize 
-              src={require('./res/img/me-face.jpg')}
+              src={require('../res/img/me-face.jpg')}
               userName='Seiji Akakabe'
               userTitle='Magic Apprentice'
               />

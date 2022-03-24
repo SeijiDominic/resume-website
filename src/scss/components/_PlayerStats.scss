@@ -1,3 +1,5 @@
+@use '../abstract/' as *;
+
 .skill-cat {
   @include flex(column);
   padding: 12px;

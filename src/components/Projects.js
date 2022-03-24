@@ -4,7 +4,7 @@ import Content from './Content';
 function Projects(props) {
   return(
     <Content 
-      title={'Projects'} hdrImage={require('./res/img/coder-moment.jpg')}
+      title={'Projects'} hdrImage={require('../res/img/coder-moment.jpg')}
       content = {
         <>
           <h1>My Website</h1>

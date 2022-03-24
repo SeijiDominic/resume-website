@@ -19,6 +19,7 @@ import {
   Routes, 
   useLocation
 } from 'react-router-dom';
+import Loading from './Loading';
 
 const Welcome = React.lazy(() => import('./Welcome'));
 const AboutMe = React.lazy(() => import('./AboutMe'));
@@ -39,13 +40,13 @@ function App() {
           <>
             <SmartIcon 
                 target='_blank' res='noreffer' 
-                src={require('./res/icons/GitHub-Mark/PNG/GitHub-Mark-Green-64px.png')}
+                src={require('../res/icons/GitHub-Mark/PNG/GitHub-Mark-Green-64px.png')}
                 href={'https://github.com/SeijiDominic'}
             />
 
             <SmartIcon 
                 target='_blank' 
-                src={require('./res/icons/LinkedIn-Logos/LI-In-Bug-green.png')}
+                src={require('../res/icons/LinkedIn-Logos/LI-In-Bug-green.png')}
                 href={'https://www.linkedin.com/in/seiji-bautista/'}
             />
           </>
@@ -70,7 +71,7 @@ function App() {
 function AnimatedRoutes(props) {
   let location = useLocation()
   return (
-    <React.Suspense fallback={<div>Loading</div>}>
+    <React.Suspense fallback={<Loading />}>
       <div className={props.className}>
         <Routes location={location}>
           <Route path='/' element={<Welcome animatableHTML={
