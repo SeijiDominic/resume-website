@@ -1,3 +1,5 @@
+@use '../abstract' as *;
+
 .default-content {
     @include flex-justify-align(column, center, center);  
     color: $font_dark;  
