@@ -17,7 +17,8 @@ const skills = [
   { id: 10, name: "Windows", level: 4},
   { id: 11, name: "Linux", level: 3 },
   { id: 12, name: "NodeJS", level: 2 },
-  { id: 13, name: "SQL", level: 3 }
+  { id: 13, name: "SQL", level: 3 },
+  { id: 14, name: "Rust", level: 4 }
 ];
 
 function AboutMe(props) {
