@@ -28,16 +28,19 @@
     text-shadow: black 0 0 7px;
   }
 
+  // .main-content {
+  //   background: orange;
+  // }
 
   main {
-    @include flex-justify-align(column, center, center);
+    @include flex-justify-align(column, flex-start, center);
     border-top-left-radius: $borderRad ;
     border-top-right-radius: $borderRad ;
     z-index: 0;
     padding: 10% 7%;
     min-height: 100vh;
 
-    
+
 
     & > * {
       width: 100%;

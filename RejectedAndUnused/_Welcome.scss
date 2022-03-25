@@ -5,12 +5,14 @@ $aniHeight: fit-content;
 @keyframes zaptop {
     0% {
         border-top-left-radius: 10px;
+        background: orange;
         margin-left: 100%;
         margin-top: 10%;
     }
 
     50% {
         border-top-left-radius: 10px;
+        background: orange;
         margin-left: 0%;
         margin-top: 10%;
     }
@@ -19,26 +21,39 @@ $aniHeight: fit-content;
 @keyframes zapbot {
     0% {
         border-bottom-right-radius: 10px;
+        background: black;
         margin-left: -100%;
         margin-bottom: 10%;
-        visibility: 0;
     }
 
     50% {
         border-bottom-right-radius: 10px;
+        background: black;
         margin-left: 0%;
         margin-bottom: 10%;
-        visibility: 1;
     }
 }
 
 .welcome-container {
-    @include flex-justify(column, center);
-    position: absolute;
+    @include flex-justify-align(column, center, center);
     padding: 0px 50px;
+    flex-grow: 1;
+    background: url(../res/img/blue-tit.jpg) no-repeat;
+    background-attachment: fixed;
     font-size: 3rem;
-    width: 100%;
-    height: 100%;
+
+    // .welcome-page:before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     background: inherit;
+    //     box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    //     filter: blur(10px);
+        
+    // }
 
     
 
@@ -60,14 +75,18 @@ $aniHeight: fit-content;
 
             .top, .bot {
                 position: relative;
-                animation-duration: 1.3s;
+                
+
                 width: 100%;
                 height: 50%;
             }
 
             .top {
-                background: $dark;
+                background: white;
                 animation-name: zaptop;
+                animation-duration: 2s;
+                
+                
             }
 
             .bot::before {
@@ -87,7 +106,8 @@ $aniHeight: fit-content;
 
             .bot {
                 // background-color: whitesmoke;
-                animation-name: zapbot;
+                // animation-name: zapbot;
+                // animation-duration: 2s;
                 // opacity: 0.3;
 
 
@@ -97,7 +117,7 @@ $aniHeight: fit-content;
                 // border-radius: 5px;
                 // position: relative;
                 z-index: 0;
-                background-color: $darker;
+                background: inherit;
                 overflow: hidden;
 
                 
@@ -108,6 +128,7 @@ $aniHeight: fit-content;
     .welcome-page {
         background: inherit;
         @include flex-justify-align(column, center, center);
+        width: 70vw;
         height: 300px;
         border-radius: 8px;
         position: relative;
@@ -130,7 +151,6 @@ $aniHeight: fit-content;
                     display:inline-block;
                     position: relative;
                     transition: margin-top 1.3s ease, opacity 3s ease;
-                    color: $primary-accent;
                 }
 
                 .emerge {

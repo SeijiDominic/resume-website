@@ -43,11 +43,14 @@ body {
         align-items: center;
         flex-grow: 1;
         overflow-y: auto;
-        // height: 100vh;
         position: relative;
 
         & > * {
             width: 70vw;
+        }
+
+        & > .welcome-container {
+            width: 100%;
         }
     }
 }

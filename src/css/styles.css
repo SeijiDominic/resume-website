@@ -66,6 +66,9 @@ body ::selection {
 #root > .right > * {
   width: 70vw;
 }
+#root > .right > .welcome-container {
+  width: 100%;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -234,7 +237,7 @@ button {
 .sticky-layout main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -720,13 +723,11 @@ button {
 @-webkit-keyframes zaptop {
   0% {
     border-top-left-radius: 10px;
-    background: orange;
     margin-left: 100%;
     margin-top: 10%;
   }
   50% {
     border-top-left-radius: 10px;
-    background: orange;
     margin-left: 0%;
     margin-top: 10%;
   }
@@ -734,13 +735,11 @@ button {
 @keyframes zaptop {
   0% {
     border-top-left-radius: 10px;
-    background: orange;
     margin-left: 100%;
     margin-top: 10%;
   }
   50% {
     border-top-left-radius: 10px;
-    background: orange;
     margin-left: 0%;
     margin-top: 10%;
   }
@@ -748,41 +747,40 @@ button {
 @-webkit-keyframes zapbot {
   0% {
     border-bottom-right-radius: 10px;
-    background: black;
     margin-left: -100%;
     margin-bottom: 10%;
+    visibility: 0;
   }
   50% {
     border-bottom-right-radius: 10px;
-    background: black;
     margin-left: 0%;
     margin-bottom: 10%;
+    visibility: 1;
   }
 }
 @keyframes zapbot {
   0% {
     border-bottom-right-radius: 10px;
-    background: black;
     margin-left: -100%;
     margin-bottom: 10%;
+    visibility: 0;
   }
   50% {
     border-bottom-right-radius: 10px;
-    background: black;
     margin-left: 0%;
     margin-bottom: 10%;
+    visibility: 1;
   }
 }
 .welcome-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  position: absolute;
   padding: 0px 50px;
-  flex-grow: 1;
-  background: url(../res/img/blue-tit.jpg) no-repeat;
-  background-attachment: fixed;
   font-size: 3rem;
+  width: 100%;
+  height: 100%;
 }
 .welcome-container .animated-bg {
   background: inherit;
@@ -800,15 +798,15 @@ button {
 }
 .welcome-container .animated-bg .relative-container .top, .welcome-container .animated-bg .relative-container .bot {
   position: relative;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
   width: 100%;
   height: 50%;
 }
 .welcome-container .animated-bg .relative-container .top {
-  background: white;
+  background: #29283a;
   -webkit-animation-name: zaptop;
           animation-name: zaptop;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
 }
 .welcome-container .animated-bg .relative-container .bot::before {
   content: "";
@@ -823,9 +821,11 @@ button {
   margin: -20px;
 }
 .welcome-container .animated-bg .relative-container .bot {
+  -webkit-animation-name: zapbot;
+          animation-name: zapbot;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   z-index: 0;
-  background: inherit;
+  background-color: #1d1c2a;
   overflow: hidden;
 }
 .welcome-container .welcome-page {
@@ -834,7 +834,6 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70vw;
   height: 300px;
   border-radius: 8px;
   position: relative;
@@ -859,6 +858,7 @@ button {
   display: inline-block;
   position: relative;
   transition: margin-top 1.3s ease, opacity 3s ease;
+  color: #00eb9c;
 }
 .welcome-container .welcome-page .animatable-container > div .emerge {
   position: -webkit-sticky;

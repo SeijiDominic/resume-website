@@ -20,6 +20,8 @@ function Welcome(props) {
         let innerTexts = [];
         let newConChildren = [];
 
+        console.log(animatableHTML.props.children)
+
         animatable.forEach(element => {
             innerTexts.push(element.props.children);
         });
