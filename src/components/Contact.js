@@ -32,7 +32,6 @@ function Contact(props) {
     <>
       <div ref={fadeElemsContainer} className='scroll-animatables'>
         <div>Under development</div>
-        
       </div>
     </>
   );
